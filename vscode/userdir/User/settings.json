@@ -1,0 +1,127 @@
+{
+  "workbench.colorTheme": "NetBeans Light Theme",
+  "java.jdt.ls.java.home": "..\\jdk",
+  "maven.executable.path": "${env:MAVEN_HOME}\\bin\\mvn",
+  "editor.tabSize": 1,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dart]": {
+    "editor.hover.enabled": false
+  },
+  "rsp-ui.enableStartServerOnActivation": [
+    {
+      "id": "redhat.vscode-community-server-connector",
+      "name": "Community Server Connector",
+      "startOnActivation": true
+    },
+    {
+      "id": "redhat.vscode-server-connector",
+      "name": "Red Hat Server Connector",
+      "startOnActivation": true
+    }
+  ],
+  "redhat.telemetry.enabled": true,
+  "nativescript.analytics.enabled": false,
+  "workbench.startupEditor": "none",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.iconTheme": "vscode-icons",
+  // Amplie a fonte do editor ao usar a roda do mouse e segurar `Ctrl`.
+  "editor.mouseWheelZoom": true,
+  // habilita atualização automática de imports ao mover ou renomear um arquivo
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  // forma de exibição das pastas
+  "explorer.compactFolders": false,
+  //desabilita o autosalvamento
+  "files.autoSave": "off",
+  "task.saveBeforeRun": "always",
+  "debug.saveBeforeStart": "allEditorsInActiveGroup",
+  "code-runner.saveFileBeforeRun": true,
+  // auto salvamento de arquivos ao passar um tempo
+  //"files.autoSave": "afterDelay",
+  //"files.autoSaveDelay": 1000,
+  // fim de linha
+  "files.eol": "\n",
+  //arquivos e pastas não exibidos
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/package-lock.json": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true,
+    "**/.mvn": true,
+    "**/.idea": true,
+    "**/test": true,
+    "**/target": true,
+    "**/.vscode": false,
+    "**/node-modules": false,
+    "**/dist": true,
+    //"**/*.vue": true,
+    "**/*.class": true
+  },
+  //esconde as dicas em caixa que são exibidas
+  "editor.parameterHints.enabled": false,
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "html.suggest.html5": false,
+  "editor.hover.enabled": true,
+  //esconde os nomes de parâmetros inline
+  "editor.inlayHints.enabled": "off",
+  "gitlens.defaultDateLocale": null,
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  },
+  "vetur.format.options.tabSize": 1,
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell",
+      "args": ["-ExecutionPolicy", "Bypass"]
+      //"args": ["-ExecutionPolicy", "Restricted"]
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "emulator.emulatorPath": "%ANDROID_HOME%\\emulator",
+  "files.associations": {
+    "*.html": "html"
+  },
+  "liveServer.settings.donotVerifyTags": true,
+  "editor.minimap.enabled": false,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "liveServer.settings.CustomBrowser": "microsoft-edge",
+  "maui.configuration.javaSdkPreferredPath": "${env:JAVA_HOME}",
+  "maui.configuration.androidSdkPreferredPath": "..\\android\\sdk",
+  "emmet.includeLanguages": {
+    "jsp": "html"
+  }
+}

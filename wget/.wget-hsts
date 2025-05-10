@@ -1,0 +1,10 @@
+# HSTS 1.0 Known Hosts database for GNU Wget.
+# Edit at your own risk.
+# <hostname>	<port>	<incl. subdomains>	<created>	<max-age>
+nodejs.org	0	1	1715618143	31536000
+neo4j.com	0	1	1709558409	63072000
+dist.neo4j.org	0	1	1709558409	31536000
+download.dbeaver.com	0	1	1692272018	15552000
+www.python.org	0	1	1693272621	63072000
+www.apache.org	0	0	1708360238	31536000
+github.com	0	1	1708360289	31536000
