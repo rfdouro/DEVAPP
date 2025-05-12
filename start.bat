@@ -36,9 +36,9 @@ set arqflutter=flutter_windows_3.29.0-stable.zip
 ::set downnode=https://nodejs.org/download/release/v18.19.0/node-v18.19.0-win-x64.zip
 ::set arqnode=node-v18.19.0-win-x64.zip
 ::set nomenode=node-v18.19.0-win-x64
-set downnode=https://nodejs.org/dist/v20.17.0/node-v20.17.0-win-x64.zip
-set arqnode=node-v20.17.0-win-x64.zip
-set nomenode=node-v20.17.0-win-x64
+set downnode=https://nodejs.org/dist/v22.15.0/node-v22.15.0-win-x64.zip
+set arqnode=node-v22.15.0-win-x64.zip
+set nomenode=node-v22.15.0-win-x64
 
 ::set downjdk=https://download.java.net/java/GA/jdk21.0.2/f2283984656d49d69e91c558476027ac/13/GPL/openjdk-21.0.2_windows-x64_bin.zip
 ::set arqjdk=openjdk-21.0.2_windows-x64_bin.zip
