@@ -24,10 +24,10 @@ set downnetbeans=https://dlcdn.apache.org/netbeans/netbeans/25/netbeans-25-bin.z
 set arqnetbeans=netbeans-25-bin.zip
 set nomenetbeans=netbeans
 
-set downandroidstudio=https://r2---sn-gpv7kne7.gvt1.com/edgedl/android/studio/ide-zips/2024.2.2.13/android-studio-2024.2.2.13-windows.zip
-set arqandroidstudio=android-studio-2024.2.2.13-windows.zip
-set downcommandlinetools=https://dl.google.com/android/repository/commandlinetools-win-11076708_latest.zip
-set arqcommandlinetools=commandlinetools-win-11076708_latest.zip
+set downandroidstudio=https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2024.3.2.14/android-studio-2024.3.2.14-windows.zip
+set arqandroidstudio=android-studio-2024.3.2.14-windows.zip
+set downcommandlinetools=https://dl.google.com/android/repository/commandlinetools-win-13114758_latest.zip
+set arqcommandlinetools=commandlinetools-win-13114758_latest.zip
 set downplatformtools=https://dl.google.com/android/repository/platform-tools-latest-windows.zip
 set arqplatformtools=platform-tools-latest-windows.zip
 set downflutter=https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.29.0-stable.zip
