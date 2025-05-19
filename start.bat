@@ -30,8 +30,8 @@ set downcommandlinetools=https://dl.google.com/android/repository/commandlinetoo
 set arqcommandlinetools=commandlinetools-win-13114758_latest.zip
 set downplatformtools=https://dl.google.com/android/repository/platform-tools-latest-windows.zip
 set arqplatformtools=platform-tools-latest-windows.zip
-set downflutter=https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.29.0-stable.zip
-set arqflutter=flutter_windows_3.29.0-stable.zip
+set downflutter=https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.29.3-stable.zip
+set arqflutter=flutter_windows_3.29.3-stable.zip
 
 ::set downnode=https://nodejs.org/download/release/v18.19.0/node-v18.19.0-win-x64.zip
 ::set arqnode=node-v18.19.0-win-x64.zip
