@@ -250,7 +250,8 @@ ECHO ( 4 ) Instala SDK Android CLI Basico
 ECHO ( 41 ) Instalar o Android Studio **Use SDK Android em DEVAPP\android\sdk**
 ECHO ( 42 ) Instalar o Flutter SDK
 ECHO ( 43 ) Instalar o Gradle
-ECHO ( 5 ) Instalar o Postgres + DBeaver
+ECHO ( 5 ) Instalar o Postgres
+ECHO ( 50 ) Instalar o DBeaver
 ECHO ( 51 ) Instalar o MySQL
 ECHO ( 52 ) Instalar o MariaDB
 ECHO ( 53 ) Instalar o Neo4J		
@@ -277,6 +278,7 @@ if %Evaluated% EQU %UserInput% (
 	IF %UserInput% EQU 42 ( GOTO :BaixaFlutter )
 	IF %UserInput% EQU 43 ( GOTO :BaixaGradle )
 	IF %UserInput% EQU 5 ( GOTO :BaixaPOSTGRES )
+	IF %UserInput% EQU 50 ( GOTO :BaixaDBEAVER )
 	IF %UserInput% EQU 51 ( GOTO :BaixaMYSQL )		
 	IF %UserInput% EQU 52 ( GOTO :BaixaMARIADB )		
 	IF %UserInput% EQU 53 ( GOTO :BaixaNEO4J )
@@ -784,8 +786,8 @@ if exist pgsql (
 )
 7za x %arqpostgres% 
 del /F %arqpostgres%
-GOTO :BaixaDBEAVER
-::GOTO :TOP
+::GOTO :BaixaDBEAVER
+GOTO :TOP
 
 :BaixaPYTHON
 :: ECHO %~dp0
