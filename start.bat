@@ -20,8 +20,8 @@ set nomevscode=vscode
 
 ::link dos arquivos -> mais lento
 ::set downnetbeans=https://archive.apache.org/dist/netbeans/netbeans/25/netbeans-25-bin.zip
-set downnetbeans=https://dlcdn.apache.org/netbeans/netbeans/25/netbeans-25-bin.zip
-set arqnetbeans=netbeans-25-bin.zip
+set downnetbeans=https://dlcdn.apache.org/netbeans/netbeans/26/netbeans-26-bin.zip
+set arqnetbeans=netbeans-26-bin.zip
 set nomenetbeans=netbeans
 
 set downandroidstudio=https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2024.3.2.14/android-studio-2024.3.2.14-windows.zip
