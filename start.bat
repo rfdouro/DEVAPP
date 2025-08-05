@@ -301,6 +301,7 @@ ECHO ( 1 ) Abrir o CMD
 ECHO ( 2 ) Abrir Visual Paradigm Online
 ECHO ( 3 ) Abrir YED Online
 ECHO ( 4 ) Abrir Draw.IO
+ECHO ( 5 ) Abrir Excalidraw
 ECHO :::::::::::::::::::::::::::::::::::::::::::::::::::::
 SET /P UserInput=Escolha uma opcao: 
 ECHO.
@@ -314,6 +315,7 @@ if %Evaluated% EQU %UserInput% (
 	IF %UserInput% EQU 2 ( GOTO :AbreVisualParadigm )
 	IF %UserInput% EQU 3 ( GOTO :AbreYed )
 	IF %UserInput% EQU 4 ( GOTO :AbreDrawIO )
+        IF %UserInput% EQU 5 ( GOTO :AbreExcalidraw )
 ) ELSE (
     ECHO Non-Integer
 )
@@ -347,6 +349,10 @@ GOTO :TOP
 
 :AbreDrawIO
 start https://app.diagrams.net/
+GOTO :TOP
+
+:AbreExcalidraw
+start https://excalidraw.com/
 GOTO :TOP
 
 :ExecVSCODE
