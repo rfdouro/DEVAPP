@@ -603,7 +603,7 @@ GOTO :TOP
 :BaixaVSCODE
 :: ECHO %~dp0
 cd "%VSCODE_HOME%"
-wget %downvscode%
+wget --no-check-certificate %downvscode%
 7za x %arqvscode%
 del /F %arqvscode%
 mkdir userdir
@@ -620,7 +620,7 @@ GOTO :ExecINSTEXTVSCODE
 :: ECHO %~dp0
 cd "%ANDROID_STUDIO_HOME%"
 cd..
-wget %downandroidstudio%
+wget --no-check-certificate %downandroidstudio%
 7za x %arqandroidstudio%
 del %arqandroidstudio%
 pause
@@ -630,7 +630,7 @@ GOTO :TOP
 :BaixaFlutter
 :: ECHO %~dp0
 cd %~dp0
-wget %downflutter%
+wget --no-check-certificate %downflutter%
 if exist flutter (
 	rmdir /S /Q flutter
 )
@@ -643,7 +643,7 @@ GOTO :TOP
 :BaixaGradle
 :: ECHO %~dp0
 cd %~dp0
-wget %downgradle%
+wget --no-check-certificate %downgradle%
 if exist gradle (
 	rmdir /S /Q gradle
 )
@@ -658,8 +658,8 @@ GOTO :TOP
 :BaixaSDKANDROID
 :: ECHO %~dp0
 cd "%ANDROID_HOME%"
-wget %downcommandlinetools%
-wget %downplatformtools%
+wget --no-check-certificate %downcommandlinetools%
+wget --no-check-certificate %downplatformtools%
 7za x %arqcommandlinetools% -ocmdline-tools
 cd cmdline-tools
 ren cmdline-tools latest
@@ -673,7 +673,7 @@ GOTO :TOP
 :BaixaNode
 :: ECHO %~dp0
 cd %~dp0
-wget %downnode%
+wget --no-check-certificate %downnode%
 if exist node (
 	rmdir /S /Q node
 )
@@ -690,7 +690,7 @@ cd %~dp0
 if exist jdk (
 	rmdir /S /Q jdk
 )
-wget %downjdk%
+wget --no-check-certificate %downjdk%
 7za x %arqjdk%
 del /F %arqjdk% 
 ren %nomejdk% jdk
@@ -700,7 +700,7 @@ GOTO :BaixaMaven
 :BaixaMaven
 :: ECHO %~dp0
 cd %~dp0
-wget %downmaven%
+wget --no-check-certificate %downmaven%
 if exist maven (
 	rmdir /S /Q maven
 )
@@ -717,7 +717,7 @@ if exist "%NETBEANS_HOME%" (
 	rmdir /q /s "%NETBEANS_HOME%"
 )
 :: mkdir %NETBEANS_HOME%
-wget %downnetbeans%
+wget --no-check-certificate %downnetbeans%
 7za x %arqnetbeans%
 del /F %arqnetbeans%
 pause
@@ -743,7 +743,7 @@ if exist git (
 )
 mkdir git
 cd "%GIT_HOME%"
-wget %downgit%
+wget --no-check-certificate %downgit%
 7za x %arqgit%
 del /F %arqgit%
 pause
@@ -753,7 +753,7 @@ GOTO :TOP
 :BaixaDBEAVER
 :: ECHO %~dp0
 cd %~dp0
-wget %downdbeaver%
+wget --no-check-certificate %downdbeaver%
 7za x %arqdbeaver%
 del /F %arqdbeaver%
 pause
@@ -762,7 +762,7 @@ GOTO :TOP
 :BaixaMYSQL
 :: ECHO %~dp0
 cd %~dp0
-wget %downmysql%
+wget --no-check-certificate %downmysql%
 if exist mysql (
 	rmdir /S /Q mysql
 )
@@ -774,7 +774,7 @@ GOTO :TOP
 :BaixaMARIADB
 :: ECHO %~dp0
 cd %~dp0
-wget %downmariadb%
+wget --no-check-certificate %downmariadb%
 if exist mariadb (
 	rmdir /S /Q mariadb
 )
@@ -786,7 +786,7 @@ GOTO :Top
 :BaixaPOSTGRES
 :: ECHO %~dp0
 cd %~dp0
-wget %downpostgres%
+wget --no-check-certificate %downpostgres%
 if exist pgsql (
 	rmdir /S /Q pgsql
 )
@@ -816,7 +816,7 @@ GOTO :TOP
 :BaixaYED
 :: ECHO %~dp0
 cd %~dp0
-wget %downyed%
+wget --no-check-certificate %downyed%
 rmdir /S /Q "%YED_HOME%"
 7za x %arqyed% 
 del /F %arqyed%
@@ -834,7 +834,7 @@ GOTO :TOP
 :BaixaNEO4J
 :: ECHO %~dp0
 cd %~dp0
-wget %downneo4j% -O %arqneo4j%
+wget --no-check-certificate %downneo4j% -O %arqneo4j%
 if exist "%NEO4J_HOME%" (
 	rmdir /S /Q "%NEO4J_HOME%"
 )
@@ -847,7 +847,7 @@ GOTO :TOP
 :BaixaMongoDB
 :: ECHO %~dp0
 cd %~dp0
-wget %downmongodb% -O %arqmongodb%
+wget --no-check-certificate %downmongodb% -O %arqmongodb%
 if exist "%MONGODB_HOME%" (
 	rmdir /S /Q "%MONGODB_HOME%"
 )
@@ -880,6 +880,6 @@ if exist "%PUTTY_HOME%" (
 )
 mkdir "%PUTTY_HOME%"
 cd "%PUTTY_HOME%"
-wget %downputty%
+wget --no-check-certificate %downputty%
 pause
 GOTO :TOP
