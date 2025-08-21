@@ -302,6 +302,7 @@ ECHO ( 2 ) Abrir Visual Paradigm Online
 ECHO ( 3 ) Abrir YED Online
 ECHO ( 4 ) Abrir Draw.IO
 ECHO ( 5 ) Abrir Excalidraw
+ECHO ( 6 ) Abrir Mermaid
 ECHO :::::::::::::::::::::::::::::::::::::::::::::::::::::
 SET /P UserInput=Escolha uma opcao: 
 ECHO.
@@ -315,7 +316,8 @@ if %Evaluated% EQU %UserInput% (
 	IF %UserInput% EQU 2 ( GOTO :AbreVisualParadigm )
 	IF %UserInput% EQU 3 ( GOTO :AbreYed )
 	IF %UserInput% EQU 4 ( GOTO :AbreDrawIO )
-        IF %UserInput% EQU 5 ( GOTO :AbreExcalidraw )
+    IF %UserInput% EQU 5 ( GOTO :AbreExcalidraw )
+    IF %UserInput% EQU 6 ( GOTO :AbreMermaid )
 ) ELSE (
     ECHO Non-Integer
 )
@@ -353,6 +355,10 @@ GOTO :TOP
 
 :AbreExcalidraw
 start https://excalidraw.com/
+GOTO :TOP
+
+:AbreMermaid
+start https://www.mermaidchart.com/play
 GOTO :TOP
 
 :ExecVSCODE
