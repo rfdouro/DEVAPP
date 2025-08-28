@@ -104,6 +104,11 @@ set arqpostgres=postgresql-15.7-2-windows-x64-binaries.zip
 set downnotepad=http://download.notepad-plus-plus.org/repository/8.x/8.6.9/npp.8.6.9.portable.x64.zip
 set arqnotepad=npp.8.6.9.portable.x64.zip
 
+set downpostman=https://dl.pstmn.io/download/latest/win64
+set arqpostman=postman.exe
+set downinsomnia=https://updates.insomnia.rest/downloads/windows/latest?app=com.insomnia.app&source=website
+set arqinsomnia=insomnia.exe
+
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: variaveis de ambiente para o windows
@@ -112,6 +117,7 @@ set arqnotepad=npp.8.6.9.portable.x64.zip
 :: sempre execute os programas usando esse arquivo
 :: para ter sempre funcionando corretamente
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
+set DEVAPP_HOME=%~dp0%
 set ANDROID_STUDIO_HOME=%~dp0%android\android-studio
 set ANDROID_HOME=%~dp0%android\sdk
 set ANDROID_SDK_ROOT=%~dp0%android\sdk
@@ -146,7 +152,7 @@ SET PGLOCALEDIR=%POSTGRES_HOME%\share\locale
 :: altera o path do windows adicinoando os novos diretórios
 :: adiciona o path original no final
 :: set PathAUX=%JAVA_HOME%\bin;%NODE_HOME%;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\tools;%ANDROID_HOME%\emulator;%VSCODE_HOME%;%WGET_HOME%;%SEVENZIP_HOME%;%NOTEPAD_HOME%;%GIT_HOME%\bin
-set PathAUX=%JAVA_HOME%\bin;%MAVEN_HOME%\bin;%NODE_HOME%;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\emulator;%ANDROID_HOME%\tools;%VSCODE_HOME%;%WGET_HOME%;%SEVENZIP_HOME%;%NOTEPAD_HOME%;%GIT_HOME%\bin;%PYTHON_HOME%;%PYTHON_HOME%\Scripts;%NEO4J_HOME%;%MONGODB_HOME%;%MONGOSH_HOME%;%PUTTY_HOME%
+set PathAUX=%DEVAPP_HOME%;%JAVA_HOME%\bin;%MAVEN_HOME%\bin;%NODE_HOME%;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\emulator;%ANDROID_HOME%\tools;%VSCODE_HOME%;%WGET_HOME%;%SEVENZIP_HOME%;%NOTEPAD_HOME%;%GIT_HOME%\bin;%PYTHON_HOME%;%PYTHON_HOME%\Scripts;%NEO4J_HOME%;%MONGODB_HOME%;%MONGOSH_HOME%;%PUTTY_HOME%
 set PathAUX=%PathAUX%;%ANDROID_HOME%\cmdline-tools\latest\bin;%ANDROID_HOME%\platform-tools
 set PathAUX=%PathAUX%;%POSTGRES_HOME%\bin
 set PathAUX=%PathAUX%;%FLUTTER_HOME%\bin
@@ -160,7 +166,7 @@ cls
 @ECHO OFF
 color 1F
 ECHO -------------------------------------------------------
-ECHO     DEVAPP v-3.0 
+ECHO     DEVAPP v-3.1 
 ECHO.
 ECHO            Prof. Rômulo (rfdouro@gmail.com) 
 ECHO.
@@ -210,6 +216,8 @@ ECHO ( 45 ) MONGODB
 ECHO ( 46 ) MONGOSH
 ECHO ( 5 ) PUTTY
 ECHO ( 6 ) NOTEPAD++
+ECHO ( 71 ) POSTMAN
+ECHO ( 72 ) INSOMNIA
 ECHO :::::::::::::::::::::::::::::::::::::::::::::::::::::
 SET /P UserInput=Escolha uma opcao: 
 ECHO.
@@ -231,6 +239,8 @@ if %Evaluated% EQU %UserInput% (
 	IF %UserInput% EQU 46 ( GOTO :ExecMONGOSH )
 	IF %UserInput% EQU 5 ( GOTO :ExecPUTTY )
 	IF %UserInput% EQU 6 ( GOTO :ExecNOTEPAD )
+	IF %UserInput% EQU 71 ( GOTO :ExecPOSTMAN )
+	IF %UserInput% EQU 72 ( GOTO :ExecINSOMNIA )
 ) ELSE (
     ECHO Non-Integer
 )
@@ -412,6 +422,32 @@ GOTO :TOP
 :: ECHO %~dp0
 start notepad++
 GOTO :TOP
+
+:ExecPOSTMAN
+IF EXIST "%DEVAPP_HOME%%arqpostman%" (
+	start "" "%DEVAPP_HOME%%arqpostman%"
+	GOTO :TOP
+) ELSE (
+	color 4F
+	ECHO POSTMAN NAO INSTALADO.
+	ECHO CLIQUE PARA PROSSEGUIR COM A INSTALACAO
+	ECHO ......................................
+	PAUSE
+	GOTO :BaixaPOSTMAN
+)
+
+:ExecINSOMNIA
+IF EXIST "%DEVAPP_HOME%%arqinsomnia%" (
+	start "" "%DEVAPP_HOME%%arqinsomnia%"
+	GOTO :TOP
+) ELSE (
+	color 4F
+	ECHO INSOMNIA NAO INSTALADO.
+	ECHO CLIQUE PARA PROSSEGUIR COM A INSTALACAO
+	ECHO ......................................
+	PAUSE
+	GOTO :BaixaINSOMNIA
+)
 
 :ExecNEO4J
 IF EXIST "%NEO4J_HOME%\bin\neo4j.bat" (
@@ -738,6 +774,20 @@ wget --auth-no-challenge %downnotepad%
 ::wget --no-check-certificate %downnotepad% -o %arqnotepad%
 7za x %arqnotepad% -onotepad
 del /F %arqnotepad%
+pause
+GOTO :Top
+
+:BaixaPOSTMAN
+cd %~dp0
+::wget --no-check-certificate %downpostman%
+wget --no-check-certificate %downpostman% -O %arqpostman%
+pause
+GOTO :Top
+
+:BaixaINSOMNIA
+cd %~dp0
+::wget --no-check-certificate %downinsomnia%
+wget --no-check-certificate %downinsomnia% -O %arqinsomnia%
 pause
 GOTO :Top
 
