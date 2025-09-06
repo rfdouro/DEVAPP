@@ -313,6 +313,9 @@ ECHO ( 3 ) Abrir YED Online
 ECHO ( 4 ) Abrir Draw.IO
 ECHO ( 5 ) Abrir Excalidraw
 ECHO ( 6 ) Abrir Mermaid
+ECHO ( 7 ) Abrir Smart Draw
+ECHO ( 8 ) Abrir DB Diagram
+ECHO ( 9 ) Abrir Creately
 ECHO :::::::::::::::::::::::::::::::::::::::::::::::::::::
 SET /P UserInput=Escolha uma opcao: 
 ECHO.
@@ -328,6 +331,9 @@ if %Evaluated% EQU %UserInput% (
 	IF %UserInput% EQU 4 ( GOTO :AbreDrawIO )
     IF %UserInput% EQU 5 ( GOTO :AbreExcalidraw )
     IF %UserInput% EQU 6 ( GOTO :AbreMermaid )
+    IF %UserInput% EQU 7 ( GOTO :AbreSmartDraw )
+    IF %UserInput% EQU 8 ( GOTO :AbreDBDiagram )
+    IF %UserInput% EQU 9 ( GOTO :AbreCreately )
 ) ELSE (
     ECHO Non-Integer
 )
@@ -369,6 +375,18 @@ GOTO :TOP
 
 :AbreMermaid
 start https://www.mermaidchart.com/play
+GOTO :TOP
+
+:AbreSmartDraw
+start https://www.smartdraw.com/entity-relationship-diagram/er-diagram-tool.htm
+GOTO :TOP
+
+:AbreDBDiagram
+start https://dbdiagram.io/home
+GOTO :TOP
+
+:AbreCreately
+start https://app.creately.com/d/start/dashboard
 GOTO :TOP
 
 :ExecVSCODE
