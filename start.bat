@@ -142,6 +142,9 @@ set PUTTY_HOME=%~dp0%putty
 set POSTGRES_HOME=%~dp0%pgsql
 set GRADLE_HOME=%~dp0%gradle
 
+set DOTNET_HOME=%~dp0%dotnet
+set DOTNET_ROOT=%~dp0%dotnet
+
 SET PGDATA=%POSTGRES_HOME%\data
 SET PGDATABASE=postgres
 SET PGUSER=postgres
@@ -157,6 +160,7 @@ set PathAUX=%PathAUX%;%ANDROID_HOME%\cmdline-tools\latest\bin;%ANDROID_HOME%\pla
 set PathAUX=%PathAUX%;%POSTGRES_HOME%\bin
 set PathAUX=%PathAUX%;%FLUTTER_HOME%\bin
 set PathAUX=%PathAUX%;%GRADLE_HOME%\bin
+set PathAUX=%PathAUX%;%DOTNET_HOME%\;%DOTNET_ROOT%\
 set Path=%PathAUX%;%Path%;
 ::::::::::::::::::::::::::::::::::::::::::::::::::::
 
