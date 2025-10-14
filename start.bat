@@ -14,8 +14,9 @@ echo.%now%
 :: variáveis com url para download dos programas complementares
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/5437499feb04f7a586f677b155b039bc2b3669eb/VSCode-win32-x64-1.90.2.zip
-set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/f1a4fb101478ce6ec82fe9627c43efbf9e98c813/VSCode-win32-x64-1.95.3.zip
-set arqvscode=VSCode-win32-x64-1.95.3.zip
+::set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/f1a4fb101478ce6ec82fe9627c43efbf9e98c813/VSCode-win32-x64-1.95.3.zip
+set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/03c265b1adee71ac88f833e065f7bb956b60550a/VSCode-win32-x64-1.105.0.zip
+set arqvscode=VSCode-win32-x64-1.105.0.zip
 set nomevscode=vscode
 
 ::link dos arquivos -> mais lento
