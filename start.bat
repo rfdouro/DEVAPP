@@ -40,12 +40,13 @@ set downnode=https://nodejs.org/dist/v22.15.0/node-v22.15.0-win-x64.zip
 set arqnode=node-v22.15.0-win-x64.zip
 set nomenode=node-v22.15.0-win-x64
 
-::set downjdk=https://download.java.net/java/GA/jdk21.0.2/f2283984656d49d69e91c558476027ac/13/GPL/openjdk-21.0.2_windows-x64_bin.zip
-::set arqjdk=openjdk-21.0.2_windows-x64_bin.zip
-::set nomejdk=jdk-21.0.2
-set downjdk=https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_windows-x64_bin.zip
-set arqjdk=openjdk-17.0.2_windows-x64_bin.zip
-set nomejdk=jdk-17.0.2
+:: visite https://jdk.java.net/archive/ para mais versões
+set downjdk=https://download.java.net/java/GA/jdk21.0.2/f2283984656d49d69e91c558476027ac/13/GPL/openjdk-21.0.2_windows-x64_bin.zip
+set arqjdk=openjdk-21.0.2_windows-x64_bin.zip
+set nomejdk=jdk-21.0.2
+::set downjdk=https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_windows-x64_bin.zip
+::set arqjdk=openjdk-17.0.2_windows-x64_bin.zip
+::set nomejdk=jdk-17.0.2
 
 set downgradle=https://services.gradle.org/distributions/gradle-8.12-bin.zip
 set arqgradle=gradle-8.12-bin.zip
