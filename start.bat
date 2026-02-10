@@ -26,10 +26,12 @@ set downnetbeans=https://dlcdn.apache.org/netbeans/netbeans/27/netbeans-27-bin.z
 set arqnetbeans=netbeans-27-bin.zip
 set nomenetbeans=netbeans
 
-set downandroidstudio=https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2024.3.2.14/android-studio-2024.3.2.14-windows.zip
-set arqandroidstudio=android-studio-2024.3.2.14-windows.zip
-set downcommandlinetools=https://dl.google.com/android/repository/commandlinetools-win-13114758_latest.zip
-set arqcommandlinetools=commandlinetools-win-13114758_latest.zip
+:: set downandroidstudio=https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2024.3.2.14/android-studio-2024.3.2.14-windows.zip
+set downandroidstudio=https://edgedl.me.gvt1.com/android/studio/ide-zips/2025.2.3.9/android-studio-2025.2.3.9-windows.zip
+set arqandroidstudio=android-studio-2025.2.3.9-windows.zip
+:: set downcommandlinetools=https://dl.google.com/android/repository/commandlinetools-win-13114758_latest.zip
+set downcommandlinetools=https://dl.google.com/android/repository/commandlinetools-win-14742923_latest.zip
+set arqcommandlinetools=commandlinetools-win-14742923_latest.zip
 set downplatformtools=https://dl.google.com/android/repository/platform-tools-latest-windows.zip
 set arqplatformtools=platform-tools-latest-windows.zip
 :: set downflutter=https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.29.3-stable.zip
