@@ -90,13 +90,16 @@ set downneo4j=https://neo4j.com/artifact.php?name=neo4j-community-5.17.0-windows
 set arqneo4j=neo4j-community-5.17.0-windows.zip
 set nomeneo4j=neo4j-community-5.17.0
 
-set downmongodb=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-7.0.11.zip
-set arqmongodb=mongodb-windows-x86_64-7.0.11.zip
-set nomemongodb=mongodb-win32-x86_64-windows-7.0.11
+:: set downmongodb=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-7.0.11.zip
+set downmongodb=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-8.2.5.zip
+set arqmongodb=mongodb-windows-x86_64-8.2.5.zip
+:: set nomemongodb=mongodb-win32-x86_64-windows-7.0.11
+set nomemongodb=mongodb-win32-x86_64-windows-8.2.5
 
-set downmongosh=https://downloads.mongodb.com/compass/mongosh-2.5.1-win32-x64.zip
-set arqmongosh=mongosh-2.5.1-win32-x64.zip
-set nomemongosh=mongosh-2.5.1-win32-x64
+:: set downmongosh=https://downloads.mongodb.com/compass/mongosh-2.5.1-win32-x64.zip
+set downmongosh=https://downloads.mongodb.com/compass/mongosh-2.6.0-win32-x64.zip
+set arqmongosh=mongosh-2.6.0-win32-x64.zip
+set nomemongosh=mongosh-2.6.0-win32-x64
 
 set downputty=https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe
 
