@@ -269,6 +269,7 @@ ECHO ( 1 ) Instala JDK + Maven
 ECHO ( 11 ) NetBeans	
 ECHO ( 2 ) Instala VSCODE + Configurações
 ECHO ( 3 ) Instala NODE + VueCLI + Git	
+ECHO ( 31 ) Instala Git	
 ECHO ( 4 ) Instala SDK Android CLI Basico
 ECHO ( 41 ) Instalar o Android Studio **Use SDK Android em DEVAPP\android\sdk**
 ECHO ( 42 ) Instalar o Flutter SDK
@@ -295,7 +296,8 @@ if %Evaluated% EQU %UserInput% (
 	IF %UserInput% EQU 1 ( GOTO :BaixaJDK )
 	IF %UserInput% EQU 11 ( GOTO :BaixaNETBEANS )
 	IF %UserInput% EQU 2 ( GOTO :BaixaVSCODE )	
-	IF %UserInput% EQU 3 ( GOTO :BaixaNode )	
+	IF %UserInput% EQU 3 ( GOTO :BaixaNode )
+	IF %UserInput% EQU 31 ( GOTO :BaixaGIT )
 	IF %UserInput% EQU 4 ( GOTO :BaixaSDKANDROID )
 	IF %UserInput% EQU 41 ( GOTO :BaixaANDROID )
 	IF %UserInput% EQU 42 ( GOTO :BaixaFlutter )
