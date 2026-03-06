@@ -90,11 +90,14 @@ set downneo4j=https://neo4j.com/artifact.php?name=neo4j-community-5.17.0-windows
 set arqneo4j=neo4j-community-5.17.0-windows.zip
 set nomeneo4j=neo4j-community-5.17.0
 
-:: set downmongodb=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-7.0.11.zip
-set downmongodb=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-8.2.5.zip
-set arqmongodb=mongodb-windows-x86_64-8.2.5.zip
+:: alterado para msi --> problema com dependencia de dll no windows
+:: ------->> observar o path para novas versões <<--------
+::set downmongodb=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-8.2.5.zip
+set downmongodb=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-8.2.5-signed.msi
+::set arqmongodb=mongodb-windows-x86_64-8.2.5.zip
+set arqmongodb=mongodb-windows-x86_64-8.2.5-signed.msi
 :: set nomemongodb=mongodb-win32-x86_64-windows-7.0.11
-set nomemongodb=mongodb-win32-x86_64-windows-8.2.5
+::set nomemongodb=mongodb-win32-x86_64-windows-8.2.5
 
 :: set downmongosh=https://downloads.mongodb.com/compass/mongosh-2.5.1-win32-x64.zip
 set downmongosh=https://downloads.mongodb.com/compass/mongosh-2.6.0-win32-x64.zip
@@ -164,7 +167,7 @@ SET PGLOCALEDIR=%POSTGRES_HOME%\share\locale
 :: altera o path do windows adicinoando os novos diretórios
 :: adiciona o path original no final
 :: set PathAUX=%JAVA_HOME%\bin;%NODE_HOME%;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\tools;%ANDROID_HOME%\emulator;%VSCODE_HOME%;%WGET_HOME%;%SEVENZIP_HOME%;%NOTEPAD_HOME%;%GIT_HOME%\bin
-set PathAUX=%DEVAPP_HOME%;%JAVA_HOME%\bin;%MAVEN_HOME%\bin;%NODE_HOME%;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\emulator;%ANDROID_HOME%\tools;%VSCODE_HOME%;%WGET_HOME%;%SEVENZIP_HOME%;%NOTEPAD_HOME%;%GIT_HOME%\bin;%PYTHON_HOME%;%PYTHON_HOME%\Scripts;%NEO4J_HOME%;%MONGODB_HOME%;%MONGOSH_HOME%;%PUTTY_HOME%
+set PathAUX=%DEVAPP_HOME%;%JAVA_HOME%\bin;%MAVEN_HOME%\bin;%NODE_HOME%;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\emulator;%ANDROID_HOME%\tools;%VSCODE_HOME%;%WGET_HOME%;%SEVENZIP_HOME%;%NOTEPAD_HOME%;%GIT_HOME%\bin;%PYTHON_HOME%;%PYTHON_HOME%\Scripts;%NEO4J_HOME%;%MONGODB_HOME%\MongoDB\Server\8.2\bin;%MONGODB_HOME%\System64;%MONGOSH_HOME%;%PUTTY_HOME%
 set PathAUX=%PathAUX%;%ANDROID_HOME%\cmdline-tools\latest\bin;%ANDROID_HOME%\platform-tools
 set PathAUX=%PathAUX%;%POSTGRES_HOME%\bin
 set PathAUX=%PathAUX%;%FLUTTER_HOME%\bin
@@ -494,9 +497,9 @@ IF EXIST "%NEO4J_HOME%\bin\neo4j.bat" (
 GOTO :TOP
 
 :ExecMONGODB
-IF EXIST "%MONGODB_HOME%\bin\mongod.exe" (
+IF EXIST "%MONGODB_HOME%\MongoDB\Server\8.2\bin\mongod.exe" (
 	::start "MongoDB" cmd /c %MONGODB_HOME%\bin\mongod.exe --dbpath %MONGODB_HOME%\data
-	cmd /c start "MongoDB" "%MONGODB_HOME%\bin\mongod.exe" --dbpath "%MONGODB_HOME%\data"
+	cmd /c start "MongoDB" "%MONGODB_HOME%\MongoDB\Server\8.2\bin\mongod.exe" --dbpath "%MONGODB_HOME%\data"
 ) ELSE (
 	color 4F
 	ECHO MONGODB NAO INSTALADO - USE A OPCAO DE INSTALACAO
@@ -940,10 +943,10 @@ wget --no-check-certificate %downmongodb% -O %arqmongodb%
 if exist "%MONGODB_HOME%" (
 	rmdir /S /Q "%MONGODB_HOME%"
 )
-7za x %arqmongodb%
-del /F %arqmongodb%
-ren %nomemongodb% mongodb
-mkdir "%MONGODB_HOME%\data"
+mkdir "%MONGODB_HOME%" && mkdir "%MONGODB_HOME%\data"
+::7za x %arqmongodb%
+msiexec /a "%arqmongodb%" /qb TARGETDIR="%MONGODB_HOME%" && del /F %arqmongodb%
+::ren %nomemongodb% mongodb
 pause
 GOTO :TOP
 
@@ -954,8 +957,7 @@ wget --no-check-certificate %downmongosh% -O %arqmongosh%
 if exist "%MONGOSH_HOME%" (
 	rmdir /S /Q "%MONGOSH_HOME%"
 )
-7za x %arqmongosh%
-del /F %arqmongosh%
+7za x %arqmongosh% && del /F %arqmongosh%
 pause
 ren %nomemongosh% mongosh
 pause
