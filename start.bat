@@ -185,11 +185,11 @@ cls
 @ECHO OFF
 color 1F
 ECHO -------------------------------------------------------
-ECHO     DEVAPP %lastcommit% - %author%
+ECHO     DEVAPP - Prof. Rômulo (rfdouro@gmail.com)
+ECHO.    Versão: %lastcommit%
+ECHO     Autor:  %author%        
 ECHO.
-ECHO            Prof. Rômulo (rfdouro@gmail.com) 
-ECHO.
-ECHO                                   %now% 
+ECHO     %now% 
 ECHO -------------------------------------------------------
 ECHO.
 ECHO --^>  SEMPRE EXECUTE OS PROGRAMAS AQUI ("start.bat") ^<--
