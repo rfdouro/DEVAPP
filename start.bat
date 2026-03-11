@@ -1,5 +1,8 @@
 chcp 65001
 
+set lastcommit=$Format:%ad$
+set author=$Format:%an$
+
 set now=%date:~6,4%-%date:~3,2%-%date:~0,2% %time:~0,2%:%time:~3,2%
 echo.%now%
 
@@ -182,7 +185,7 @@ cls
 @ECHO OFF
 color 1F
 ECHO -------------------------------------------------------
-ECHO     DEVAPP v-3.1 
+ECHO     DEVAPP %lastcommit% - %author%
 ECHO.
 ECHO            Prof. Rômulo (rfdouro@gmail.com) 
 ECHO.
