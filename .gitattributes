@@ -1,2 +1,2 @@
 *.bat text eol=crlf
-versao.txt export-subst
+start.bat export-subst
