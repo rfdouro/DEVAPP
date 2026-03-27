@@ -61,9 +61,9 @@ set downgradle=https://services.gradle.org/distributions/gradle-8.12-bin.zip
 set arqgradle=gradle-8.12-bin.zip
 set nomegradle=gradle-8.12
 
-set downmaven=https://dlcdn.apache.org/maven/maven-3/3.9.11/binaries/apache-maven-3.9.11-bin.zip
-set arqmaven=apache-maven-3.9.11-bin.zip
-set nomemaven=apache-maven-3.9.11
+set downmaven=https://dlcdn.apache.org/maven/maven-3/3.9.14/binaries/apache-maven-3.9.14-bin.zip
+set arqmaven=apache-maven-3.9.14-bin.zip
+set nomemaven=apache-maven-3.9.14
 
 set downmysql=https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.39-winx64.zip
 set arqmysql=mysql-8.0.39-winx64.zip
