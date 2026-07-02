@@ -125,6 +125,12 @@ set arqpostman=postman.exe
 set downinsomnia=https://updates.insomnia.rest/downloads/windows/latest?app=com.insomnia.app&source=website
 set arqinsomnia=insomnia.exe
 
+set downnetcore=https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.301/dotnet-sdk-10.0.301-win-x64.zip
+set arqnetcore=dotnet-sdk-10.0.301-win-x64.zip
+set downaspnetcore=https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/10.0.9/aspnetcore-runtime-10.0.9-win-x64.zip
+set arqaspnetcore=aspnetcore-runtime-10.0.9-win-x64.zip
+
+
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: variaveis de ambiente para o windows
@@ -275,7 +281,7 @@ ECHO -----------------------------------------------------
 ECHO ( 1 ) Instala JDK + Maven
 ECHO ( 11 ) NetBeans	
 ECHO ( 2 ) Instala VSCODE + Configurações
-ECHO ( 3 ) Instala NODE + VueCLI + Git	
+ECHO ( 3 ) Instala NODE + Git	
 ECHO ( 31 ) Instala Git	
 ECHO ( 4 ) Instala SDK Android CLI Basico
 ECHO ( 41 ) Instalar o Android Studio **Use SDK Android em DEVAPP\android\sdk**
@@ -291,6 +297,7 @@ ECHO ( 541 ) Instalar o MongoSH
 ECHO ( 6 ) Instalar o Putty
 ECHO ( 7 ) Instalar o PYTHON
 ECHO ( 8 ) Instalar o NOTEPAD++
+ECHO ( 9 ) Instalar o NetCore
 ECHO :::::::::::::::::::::::::::::::::::::::::::::::::::::
 SET /P UserInput=Escolha uma opcao: 
 ECHO.
@@ -319,6 +326,7 @@ if %Evaluated% EQU %UserInput% (
 	IF %UserInput% EQU 6 ( GOTO :BaixaPUTTY )
 	IF %UserInput% EQU 7 ( GOTO :BaixaPYTHON )	
 	IF %UserInput% EQU 8 ( GOTO :BaixaNOTEPAD )
+	IF %UserInput% EQU 9 ( GOTO :BaixaNetCore )
 ) ELSE (
     ECHO Non-Integer
 )
@@ -762,7 +770,7 @@ if exist node (
 7za x %arqnode% 
 del /F %arqnode%
 ren %nomenode% node
-start "VueCLI" cmd /c "npm install -g @vue/cli"
+::start "VueCLI" cmd /c "npm install -g @vue/cli"
 cd %~dp0
 GOTO :BaixaGIT
 
@@ -976,5 +984,20 @@ if exist "%PUTTY_HOME%" (
 mkdir "%PUTTY_HOME%"
 cd "%PUTTY_HOME%"
 wget --no-check-certificate %downputty%
+pause
+GOTO :TOP
+
+:BaixaNetCore
+:: ECHO %~dp0
+cd %~dp0
+if exist "%DOTNET_HOME%" (
+	rmdir /S /Q "%DOTNET_HOME%"
+)
+mkdir "%DOTNET_HOME%"
+cd "%DOTNET_HOME%"
+wget --no-check-certificate %downnetcore%
+7za x %arqnetcore% && del /F %arqnetcore%
+wget --no-check-certificate %downaspnetcore%
+7za x %arqaspnetcore% && del /F %arqaspnetcore%
 pause
 GOTO :TOP

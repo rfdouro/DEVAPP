@@ -1,2 +1,17 @@
 ## remove o arquivo usado para push que contém o token
-gitpush.bat
+# Ignora absolutamente TUDO na pasta
+*
+
+# Permite que o Git rastreie pastas específicas
+!/icons/
+!/sevenzip/
+!/vscode/
+!/wget/
+
+# Permite arquivos específicos
+!.gitattributes
+!.gitignore
+!README.md
+!start.bat
+
+
