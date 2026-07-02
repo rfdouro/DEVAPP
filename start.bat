@@ -1,4 +1,5 @@
-chcp 65001
+@echo off
+chcp 65001 > nul
 
 set lastcommit=$Format:%ai$
 set author=$Format:%an$
@@ -11,7 +12,6 @@ echo.%now%
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: @ECHO Estamos no drive %cd:~0,2%
 :: @ECHO Em %~dp0
-@ECHO OFF
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: variáveis com url para download dos programas complementares
@@ -130,8 +130,6 @@ set arqnetcore=dotnet-sdk-10.0.301-win-x64.zip
 set downaspnetcore=https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/10.0.9/aspnetcore-runtime-10.0.9-win-x64.zip
 set arqaspnetcore=aspnetcore-runtime-10.0.9-win-x64.zip
 
-
-
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: variaveis de ambiente para o windows
 :: configura o caminho para o sdk android
@@ -186,10 +184,8 @@ set PathAUX=%PathAUX%;%DOTNET_HOME%\;%DOTNET_ROOT%\
 set Path=%PathAUX%;%Path%;
 ::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-
 :TOP
 cls
-@ECHO OFF
 color 1F
 ECHO -------------------------------------------------------
 ECHO     DEVAPP - Prof. Rômulo (rfdouro@gmail.com)
@@ -204,6 +200,7 @@ ECHO.
 ECHO -------------------------------------------------------
 ECHO --- OPCOES --------------------------------------------
 ECHO ( 0 ) SAIR
+ECHO -----------------------------------------------------
 ECHO ( 1 ) PROGRAMAÇÃO E BANCO DE DADOS
 ECHO ( 2 ) INSTALAÇÕES
 ECHO ( 3 ) AUXILIARES
@@ -224,26 +221,25 @@ if %Evaluated% EQU %UserInput% (
 )
 GOTO :TOP
 
-
 :Executar
 color E0
-ECHO --- OPÇÕES DE EXECUÇÃO ------------------------------
+ECHO --- OPÇÕES DE EXECUÇÃO (ordem alfabética) -------------
 ECHO ( 0 ) Voltar
 ECHO -----------------------------------------------------
-ECHO ( 1 ) NETBEANS
-ECHO ( 2 ) VSCODE
-ECHO ( 3 ) ANDROID STUDIO
-ECHO ( 4 ) DBEAVER
-ECHO ( 41 ) POSTGRES
-ECHO ( 42 ) MYSQL
-ECHO ( 43 ) MARIADB
-ECHO ( 44 ) NEO4J
-ECHO ( 45 ) MONGODB
-ECHO ( 46 ) MONGOSH
-ECHO ( 5 ) PUTTY
-ECHO ( 6 ) NOTEPAD++
-ECHO ( 71 ) POSTMAN
-ECHO ( 72 ) INSOMNIA
+ECHO ( 1 ) ANDROID STUDIO
+ECHO ( 2 ) DBEAVER
+ECHO ( 3 ) INSOMNIA
+ECHO ( 4 ) MARIADB
+ECHO ( 5 ) MONGODB
+ECHO ( 6 ) MONGOSH
+ECHO ( 7 ) MYSQL
+ECHO ( 8 ) NEO4J
+ECHO ( 9 ) NETBEANS
+ECHO (10 ) NOTEPAD++
+ECHO (11 ) POSTGRES
+ECHO (12 ) POSTMAN
+ECHO (13 ) PUTTY
+ECHO (14 ) VSCODE
 ECHO :::::::::::::::::::::::::::::::::::::::::::::::::::::
 SET /P UserInput=Escolha uma opcao: 
 ECHO.
@@ -253,51 +249,50 @@ ECHO.
 SET /A Evaluated=UserInput
 if %Evaluated% EQU %UserInput% (
     IF %UserInput% EQU 0 ( GOTO :TOP )
-	IF %UserInput% EQU 1 ( GOTO :ExecNETBEANS )
-	IF %UserInput% EQU 2 ( GOTO :ExecVSCODE )
-    IF %UserInput% EQU 3 ( GOTO :ExecANDROIDSTUDIO )
-	IF %UserInput% EQU 4 ( GOTO :ExecDBEAVER )
-	IF %UserInput% EQU 41 ( GOTO :ExecPOSTGRES )
-    IF %UserInput% EQU 42 ( GOTO :ExecMYSQL )
-	IF %UserInput% EQU 43 ( GOTO :ExecMARIADB )
-	IF %UserInput% EQU 44 ( GOTO :ExecNEO4J)
-    IF %UserInput% EQU 45 ( GOTO :ExecMONGODB )
-	IF %UserInput% EQU 46 ( GOTO :ExecMONGOSH )
-	IF %UserInput% EQU 5 ( GOTO :ExecPUTTY )
-	IF %UserInput% EQU 6 ( GOTO :ExecNOTEPAD )
-	IF %UserInput% EQU 71 ( GOTO :ExecPOSTMAN )
-	IF %UserInput% EQU 72 ( GOTO :ExecINSOMNIA )
+	IF %UserInput% EQU 1 ( GOTO :ExecANDROIDSTUDIO )
+	IF %UserInput% EQU 2 ( GOTO :ExecDBEAVER )
+	IF %UserInput% EQU 3 ( GOTO :ExecINSOMNIA )
+	IF %UserInput% EQU 4 ( GOTO :ExecMARIADB )
+	IF %UserInput% EQU 5 ( GOTO :ExecMONGODB )
+	IF %UserInput% EQU 6 ( GOTO :ExecMONGOSH )
+	IF %UserInput% EQU 7 ( GOTO :ExecMYSQL )
+	IF %UserInput% EQU 8 ( GOTO :ExecNEO4J )
+	IF %UserInput% EQU 9 ( GOTO :ExecNETBEANS )
+	IF %UserInput% EQU 10 ( GOTO :ExecNOTEPAD )
+	IF %UserInput% EQU 11 ( GOTO :ExecPOSTGRES )
+	IF %UserInput% EQU 12 ( GOTO :ExecPOSTMAN )
+	IF %UserInput% EQU 13 ( GOTO :ExecPUTTY )
+	IF %UserInput% EQU 14 ( GOTO :ExecVSCODE )
 ) ELSE (
     ECHO Non-Integer
 )
 GOTO :TOP
 
-
 :Instalar
 color A0
-ECHO --- OPÇÕES DE INSTALAÇÃO ------------------------------
+ECHO --- OPÇÕES DE INSTALAÇÃO (ordem alfabética) ------------
 ECHO ( 0 ) Voltar
 ECHO -----------------------------------------------------
-ECHO ( 1 ) Instala JDK + Maven
-ECHO ( 11 ) NetBeans	
-ECHO ( 2 ) Instala VSCODE + Configurações
-ECHO ( 3 ) Instala NODE + Git	
-ECHO ( 31 ) Instala Git	
-ECHO ( 4 ) Instala SDK Android CLI Basico
-ECHO ( 41 ) Instalar o Android Studio **Use SDK Android em DEVAPP\android\sdk**
-ECHO ( 42 ) Instalar o Flutter SDK
-ECHO ( 43 ) Instalar o Gradle
-ECHO ( 5 ) Instalar o Postgres
-ECHO ( 50 ) Instalar o DBeaver
-ECHO ( 51 ) Instalar o MySQL
-ECHO ( 52 ) Instalar o MariaDB
-ECHO ( 53 ) Instalar o Neo4J		
-ECHO ( 54 ) Instalar o MongoDB
-ECHO ( 541 ) Instalar o MongoSH
-ECHO ( 6 ) Instalar o Putty
-ECHO ( 7 ) Instalar o PYTHON
-ECHO ( 8 ) Instalar o NOTEPAD++
-ECHO ( 9 ) Instalar o NetCore
+ECHO ( 1 ) ANDROID STUDIO **Use SDK Android em DEVAPP\android\sdk**
+ECHO ( 2 ) DBEAVER
+ECHO ( 3 ) FLUTTER SDK
+ECHO ( 4 ) GIT
+ECHO ( 5 ) GRADLE
+ECHO ( 6 ) JDK + MAVEN
+ECHO ( 7 ) MARIADB
+ECHO ( 8 ) MONGODB
+ECHO ( 9 ) MONGOSH
+ECHO (10 ) MYSQL
+ECHO (11 ) NEO4J
+ECHO (12 ) NETBEANS
+ECHO (13 ) NETCORE
+ECHO (14 ) NODE + GIT
+ECHO (15 ) NOTEPAD++
+ECHO (16 ) POSTGRES
+ECHO (17 ) PUTTY
+ECHO (18 ) PYTHON
+ECHO (19 ) SDK ANDROID CLI BÁSICO
+ECHO (20 ) VSCODE + CONFIGURAÇÕES
 ECHO :::::::::::::::::::::::::::::::::::::::::::::::::::::
 SET /P UserInput=Escolha uma opcao: 
 ECHO.
@@ -307,26 +302,26 @@ ECHO.
 SET /A Evaluated=UserInput
 if %Evaluated% EQU %UserInput% (
 	IF %UserInput% EQU 0 ( GOTO :TOP )
-	IF %UserInput% EQU 1 ( GOTO :BaixaJDK )
-	IF %UserInput% EQU 11 ( GOTO :BaixaNETBEANS )
-	IF %UserInput% EQU 2 ( GOTO :BaixaVSCODE )	
-	IF %UserInput% EQU 3 ( GOTO :BaixaNode )
-	IF %UserInput% EQU 31 ( GOTO :BaixaGIT )
-	IF %UserInput% EQU 4 ( GOTO :BaixaSDKANDROID )
-	IF %UserInput% EQU 41 ( GOTO :BaixaANDROID )
-	IF %UserInput% EQU 42 ( GOTO :BaixaFlutter )
-	IF %UserInput% EQU 43 ( GOTO :BaixaGradle )
-	IF %UserInput% EQU 5 ( GOTO :BaixaPOSTGRES )
-	IF %UserInput% EQU 50 ( GOTO :BaixaDBEAVER )
-	IF %UserInput% EQU 51 ( GOTO :BaixaMYSQL )		
-	IF %UserInput% EQU 52 ( GOTO :BaixaMARIADB )		
-	IF %UserInput% EQU 53 ( GOTO :BaixaNEO4J )
-	IF %UserInput% EQU 54 ( GOTO :BaixaMongoDB )
-	IF %UserInput% EQU 541 ( GOTO :BaixaMongoSH )	
-	IF %UserInput% EQU 6 ( GOTO :BaixaPUTTY )
-	IF %UserInput% EQU 7 ( GOTO :BaixaPYTHON )	
-	IF %UserInput% EQU 8 ( GOTO :BaixaNOTEPAD )
-	IF %UserInput% EQU 9 ( GOTO :BaixaNetCore )
+	IF %UserInput% EQU 1 ( GOTO :BaixaANDROID )
+	IF %UserInput% EQU 2 ( GOTO :BaixaDBEAVER )
+	IF %UserInput% EQU 3 ( GOTO :BaixaFlutter )
+	IF %UserInput% EQU 4 ( GOTO :BaixaGIT )
+	IF %UserInput% EQU 5 ( GOTO :BaixaGradle )
+	IF %UserInput% EQU 6 ( GOTO :BaixaJDK )
+	IF %UserInput% EQU 7 ( GOTO :BaixaMARIADB )
+	IF %UserInput% EQU 8 ( GOTO :BaixaMongoDB )
+	IF %UserInput% EQU 9 ( GOTO :BaixaMongoSH )
+	IF %UserInput% EQU 10 ( GOTO :BaixaMYSQL )
+	IF %UserInput% EQU 11 ( GOTO :BaixaNEO4J )
+	IF %UserInput% EQU 12 ( GOTO :BaixaNETBEANS )
+	IF %UserInput% EQU 13 ( GOTO :BaixaNetCore )
+	IF %UserInput% EQU 14 ( GOTO :BaixaNode )
+	IF %UserInput% EQU 15 ( GOTO :BaixaNOTEPAD )
+	IF %UserInput% EQU 16 ( GOTO :BaixaPOSTGRES )
+	IF %UserInput% EQU 17 ( GOTO :BaixaPUTTY )
+	IF %UserInput% EQU 18 ( GOTO :BaixaPYTHON )
+	IF %UserInput% EQU 19 ( GOTO :BaixaSDKANDROID )
+	IF %UserInput% EQU 20 ( GOTO :BaixaVSCODE )
 ) ELSE (
     ECHO Non-Integer
 )
@@ -334,18 +329,18 @@ GOTO :TOP
 
 :Auxiliares
 color B0
-ECHO --- OPÇÕES AUXILIARES ------------------------------
+ECHO --- OPÇÕES AUXILIARES (ordem alfabética) --------------
 ECHO ( 0 ) Voltar
 ECHO -----------------------------------------------------
-ECHO ( 1 ) Abrir o CMD	
-ECHO ( 2 ) Abrir Visual Paradigm Online
-ECHO ( 3 ) Abrir YED Online
-ECHO ( 4 ) Abrir Draw.IO
-ECHO ( 5 ) Abrir Excalidraw
-ECHO ( 6 ) Abrir Mermaid
-ECHO ( 7 ) Abrir Smart Draw
-ECHO ( 8 ) Abrir DB Diagram
-ECHO ( 9 ) Abrir Creately
+ECHO ( 1 ) CMD
+ECHO ( 2 ) CREATELY
+ECHO ( 3 ) DB DIAGRAM
+ECHO ( 4 ) DRAW.IO
+ECHO ( 5 ) EXCALIDRAW
+ECHO ( 6 ) MERMAID
+ECHO ( 7 ) SMART DRAW
+ECHO ( 8 ) VISUAL PARADIGM ONLINE
+ECHO ( 9 ) YED ONLINE
 ECHO :::::::::::::::::::::::::::::::::::::::::::::::::::::
 SET /P UserInput=Escolha uma opcao: 
 ECHO.
@@ -356,23 +351,18 @@ SET /A Evaluated=UserInput
 if %Evaluated% EQU %UserInput% (
 	IF %UserInput% EQU 0 ( GOTO :TOP )
 	IF %UserInput% EQU 1 ( GOTO :AbreCMD )
-	IF %UserInput% EQU 2 ( GOTO :AbreVisualParadigm )
-	IF %UserInput% EQU 3 ( GOTO :AbreYed )
+	IF %UserInput% EQU 2 ( GOTO :AbreCreately )
+	IF %UserInput% EQU 3 ( GOTO :AbreDBDiagram )
 	IF %UserInput% EQU 4 ( GOTO :AbreDrawIO )
-    IF %UserInput% EQU 5 ( GOTO :AbreExcalidraw )
-    IF %UserInput% EQU 6 ( GOTO :AbreMermaid )
-    IF %UserInput% EQU 7 ( GOTO :AbreSmartDraw )
-    IF %UserInput% EQU 8 ( GOTO :AbreDBDiagram )
-    IF %UserInput% EQU 9 ( GOTO :AbreCreately )
+	IF %UserInput% EQU 5 ( GOTO :AbreExcalidraw )
+	IF %UserInput% EQU 6 ( GOTO :AbreMermaid )
+	IF %UserInput% EQU 7 ( GOTO :AbreSmartDraw )
+	IF %UserInput% EQU 8 ( GOTO :AbreVisualParadigm )
+	IF %UserInput% EQU 9 ( GOTO :AbreYed )
 ) ELSE (
     ECHO Non-Integer
 )
 GOTO :TOP
-
-
-
-
-
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -383,16 +373,15 @@ GOTO :TOP
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :AbreCMD
-:: ECHO %~dp0
 start "CMD" cmd /c "start"
 GOTO :TOP
 
-:AbreVisualParadigm
-start https://online.visual-paradigm.com/pt/diagrams/solutions/free-visual-paradigm-online/
+:AbreCreately
+start https://app.creately.com/d/start/dashboard
 GOTO :TOP
 
-:AbreYed
-start https://www.yworks.com/yed-live/
+:AbreDBDiagram
+start https://dbdiagram.io/home
 GOTO :TOP
 
 :AbreDrawIO
@@ -411,48 +400,12 @@ GOTO :TOP
 start https://www.smartdraw.com/entity-relationship-diagram/er-diagram-tool.htm
 GOTO :TOP
 
-:AbreDBDiagram
-start https://dbdiagram.io/home
+:AbreVisualParadigm
+start https://online.visual-paradigm.com/pt/diagrams/solutions/free-visual-paradigm-online/
 GOTO :TOP
 
-:AbreCreately
-start https://app.creately.com/d/start/dashboard
-GOTO :TOP
-
-:ExecVSCODE
-IF EXIST "%VSCODE_HOME%\code.exe" (
-	::start "VSCode" cmd /c "start %VSCODE_HOME%\code.exe --extensions-dir %VSCODE_HOME%\extensions --user-data-dir %VSCODE_HOME%\userdir"
-	cmd /c start "" "%VSCODE_HOME%\code.exe" --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir"
-) ELSE (
-	color 4F
-	ECHO VSCODE NAO INSTALADO - USE A OPCAO DE INSTALACAO
-	ECHO ......................................
-	PAUSE
-)
-GOTO :TOP
-
-:ExecNETBEANS
-IF EXIST "%NETBEANS_HOME%\bin\netbeans64.exe" (
-	::start "Netbeans" cmd /c "start %NETBEANS_HOME%\bin\netbeans64.exe --jdkhome %JAVA_HOME%"
-	cmd /c start "" "%NETBEANS_HOME%\bin\netbeans64.exe" --jdkhome "%JAVA_HOME%"
-) ELSE (
-	color 4F
-	ECHO NETBEANS NAO INSTALADO - USE A OPCAO DE INSTALACAO
-	ECHO ......................................
-	PAUSE
-)
-GOTO :TOP
-
-:ExecDBEAVER
-IF EXIST "%DBEAVER_HOME%\dbeaver.exe" (
-	::start "%DBEAVER_HOME%"\dbeaver.exe
-	start "" "%DBEAVER_HOME%\dbeaver.exe"
-) ELSE (
-	color 4F
-	ECHO DBEAVER NAO INSTALADO - USE A OPCAO DE INSTALACAO
-	ECHO ......................................
-	PAUSE
-)
+:AbreYed
+start https://www.yworks.com/yed-live/
 GOTO :TOP
 
 :ExecANDROIDSTUDIO
@@ -466,28 +419,20 @@ IF EXIST "%ANDROID_STUDIO_HOME%\bin\studio64.exe" (
 )
 GOTO :TOP
 
-:ExecNOTEPAD
-:: ECHO %~dp0
-start notepad++
-GOTO :TOP
-
-:ExecPOSTMAN
-IF EXIST "%DEVAPP_HOME%%arqpostman%" (
-	start "" "%DEVAPP_HOME%%arqpostman%"
-	GOTO :TOP
+:ExecDBEAVER
+IF EXIST "%DBEAVER_HOME%\dbeaver.exe" (
+	start "" "%DBEAVER_HOME%\dbeaver.exe"
 ) ELSE (
 	color 4F
-	ECHO POSTMAN NAO INSTALADO.
-	ECHO CLIQUE PARA PROSSEGUIR COM A INSTALACAO
+	ECHO DBEAVER NAO INSTALADO - USE A OPCAO DE INSTALACAO
 	ECHO ......................................
 	PAUSE
-	GOTO :BaixaPOSTMAN
 )
+GOTO :TOP
 
 :ExecINSOMNIA
 IF EXIST "%DEVAPP_HOME%%arqinsomnia%" (
 	start "" "%DEVAPP_HOME%%arqinsomnia%"
-	GOTO :TOP
 ) ELSE (
 	color 4F
 	ECHO INSOMNIA NAO INSTALADO.
@@ -497,12 +442,12 @@ IF EXIST "%DEVAPP_HOME%%arqinsomnia%" (
 	GOTO :BaixaINSOMNIA
 )
 
-:ExecNEO4J
-IF EXIST "%NEO4J_HOME%\bin\neo4j.bat" (
-	start "NEO4J" "%NEO4J_HOME%\bin\neo4j.bat" console
+:ExecMARIADB
+IF EXIST "%MARIADB_HOME%\bin\mysql_install_db.exe" (
+	start "Mariadb" cmd /c "ECHO ATENCAO & ECHO --------------------------------------- & ECHO Nao feche essa janela enquanto estiver usando o MariaDB & ECHO O MariaDB estara rodando na porta 3360 e a senha e SECRET & ECHO --------------------------------------- & pause & "%MARIADB_HOME%"\bin\mysql_install_db --password=SECRET & "%MARIADB_HOME%"\bin\mysqld --port=3360 --console"
 ) ELSE (
 	color 4F
-	ECHO NEO4J NAO INSTALADO - USE A OPCAO DE INSTALACAO
+	ECHO MARIADB NAO INSTALADO - USE A OPCAO DE INSTALACAO
 	ECHO ......................................
 	PAUSE
 )
@@ -510,7 +455,6 @@ GOTO :TOP
 
 :ExecMONGODB
 IF EXIST "%MONGODB_HOME%\MongoDB\Server\8.2\bin\mongod.exe" (
-	::start "MongoDB" cmd /c %MONGODB_HOME%\bin\mongod.exe --dbpath %MONGODB_HOME%\data
 	cmd /c start "MongoDB" "%MONGODB_HOME%\MongoDB\Server\8.2\bin\mongod.exe" --dbpath "%MONGODB_HOME%\data"
 ) ELSE (
 	color 4F
@@ -520,26 +464,12 @@ IF EXIST "%MONGODB_HOME%\MongoDB\Server\8.2\bin\mongod.exe" (
 )
 GOTO :TOP
 
-:ExecMongoSH
+:ExecMONGOSH
 IF EXIST "%MONGOSH_HOME%\bin\mongosh.exe" (
-	::start "MongoSH" cmd /c %MONGOSH_HOME%\bin\mongosh.exe
 	cmd /c start "MongoSH" "%MONGOSH_HOME%\bin\mongosh.exe"
 ) ELSE (
 	color 4F
 	ECHO MONGOSH NAO INSTALADO - USE A OPCAO DE INSTALACAO
-	ECHO ......................................
-	PAUSE
-)
-GOTO :TOP
-
-
-:ExecPUTTY
-IF EXIST "%PUTTY_HOME%\putty.exe" (
-	::start %PUTTY_HOME%\putty.exe
-	cmd /c start "Putty" "%PUTTY_HOME%\putty.exe"
-) ELSE (
-	color 4F
-	ECHO PUTTY NAO INSTALADO - USE A OPCAO DE INSTALACAO
 	ECHO ......................................
 	PAUSE
 )
@@ -556,29 +486,33 @@ IF EXIST "%MYSQL_HOME%\bin\mysqld.exe" (
 )
 GOTO :TOP
 
-:ExecMARIADB
-IF EXIST "%MARIADB_HOME%\bin\mysql_install_db.exe" (
-	start "Mariadb" cmd /c "ECHO ATENCAO & ECHO --------------------------------------- & ECHO Nao feche essa janela enquanto estiver usando o MariaDB & ECHO O MariaDB estara rodando na porta 3360 e a senha e SECRET & ECHO --------------------------------------- & pause & "%MARIADB_HOME%"\bin\mysql_install_db --password=SECRET & "%MARIADB_HOME%"\bin\mysqld --port=3360 --console"
+:ExecNEO4J
+IF EXIST "%NEO4J_HOME%\bin\neo4j.bat" (
+	start "NEO4J" "%NEO4J_HOME%\bin\neo4j.bat" console
 ) ELSE (
 	color 4F
-	ECHO MARIADB NAO INSTALADO - USE A OPCAO DE INSTALACAO
+	ECHO NEO4J NAO INSTALADO - USE A OPCAO DE INSTALACAO
 	ECHO ......................................
 	PAUSE
 )
-GOTO :Top
+GOTO :TOP
 
-::caso feche a janela e não consiga parar ou reiniciar
-::o postgres posteriormente, deve interromper o seu processo
-::busque o PID usando o seguinte comando
-::     tasklist /FI "ImageName eq postgres.exe"
-::após encontrar interrompa com o seguinte comando
-::     taskkill /F /PID 18932
-::118932 deve ser substituido pelo id correspondente
-::
-::ou usando
-::     taskkill /F /IM "postgres.exe"
+:ExecNETBEANS
+IF EXIST "%NETBEANS_HOME%\bin\netbeans64.exe" (
+	cmd /c start "" "%NETBEANS_HOME%\bin\netbeans64.exe" --jdkhome "%JAVA_HOME%"
+) ELSE (
+	color 4F
+	ECHO NETBEANS NAO INSTALADO - USE A OPCAO DE INSTALACAO
+	ECHO ......................................
+	PAUSE
+)
+GOTO :TOP
+
+:ExecNOTEPAD
+start notepad++
+GOTO :TOP
+
 :ExecPOSTGRES
-::Dica dada em https://gist.github.com/windsting/920872a03df9a6293179252752a56e6a
 IF EXIST "%POSTGRES_HOME%\bin\initdb.exe" (
 	ECHO Postgres existe
 ) ELSE (
@@ -595,10 +529,43 @@ IF EXIST "%POSTGRES_HOME%\data" (
 	ECHO Primeira execucao do postgres.
 	"%POSTGRES_HOME%\bin\initdb" -U postgres -A trust
 )
-::interrompe o postgres caso esteja rodando
-taskkill /F /IM "postgres.exe"
+taskkill /F /IM "postgres.exe" >nul 2>&1
 start "postgres" cmd /c "ECHO ATENCAO & ECHO --------------------------------------- & ECHO Nao feche essa janela enquanto estiver usando o postgres & ECHO O postgres estara rodando na porta %PGPORT% & ECHO --------------------------------------- & pause & "%POSTGRES_HOME%"\bin\pg_ctl -D "%POSTGRES_HOME%"\data -l "%POSTGRES_HOME%"\logfile start && ECHO para fechar o banco continue abaixo... && PAUSE && "%POSTGRES_HOME%"\bin\pg_ctl -D "%POSTGRES_HOME%"\data stop"
+GOTO :TOP
 
+:ExecPOSTMAN
+IF EXIST "%DEVAPP_HOME%%arqpostman%" (
+	start "" "%DEVAPP_HOME%%arqpostman%"
+) ELSE (
+	color 4F
+	ECHO POSTMAN NAO INSTALADO.
+	ECHO CLIQUE PARA PROSSEGUIR COM A INSTALACAO
+	ECHO ......................................
+	PAUSE
+	GOTO :BaixaPOSTMAN
+)
+GOTO :TOP
+
+:ExecPUTTY
+IF EXIST "%PUTTY_HOME%\putty.exe" (
+	cmd /c start "Putty" "%PUTTY_HOME%\putty.exe"
+) ELSE (
+	color 4F
+	ECHO PUTTY NAO INSTALADO - USE A OPCAO DE INSTALACAO
+	ECHO ......................................
+	PAUSE
+)
+GOTO :TOP
+
+:ExecVSCODE
+IF EXIST "%VSCODE_HOME%\code.exe" (
+	cmd /c start "" "%VSCODE_HOME%\code.exe" --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir"
+) ELSE (
+	color 4F
+	ECHO VSCODE NAO INSTALADO - USE A OPCAO DE INSTALACAO
+	ECHO ......................................
+	PAUSE
+)
 GOTO :TOP
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -609,19 +576,12 @@ GOTO :TOP
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-
 :ExecINSTEXTVSCODE
-:: executa o vscode indicando o caminho das extensões
-:: mais em https://code.visualstudio.com/docs/editor/extension-marketplace#_common-questions
-:: mais em https://code.visualstudio.com/docs/editor/command-line
-:: mais em https://code.visualstudio.com/docs/editor/command-line#_advanced-cli-options
-:: ECHO %~dp0
 ECHO ---------------------------------------
 @ECHO Instalacao de extensoes do VSCODE
 @ECHO OFF
 ECHO Em %VSCODE_HOME%
 ECHO ---------------------------------------
-::pause
 cd "%VSCODE_HOME%\bin\"
 call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension christian-kohler.npm-intellisense ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension christian-kohler.path-intellisense ^
@@ -672,42 +632,22 @@ call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_H
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dart-code.dart-code ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dart-code.flutter ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension rexthedev.flutter-preview ^
-
 pause
 GOTO :TOP
 
 :ExecINSTVUE
-:: ECHO %~dp0
 start "Instala vue" cmd /c "npm i -g @vue/cli"
 GOTO :TOP
-
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: 
-:: seção de instalações de programas
+:: seção de downloads propriamente ditos
 ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:BaixaVSCODE
-:: ECHO %~dp0
-cd "%VSCODE_HOME%"
-wget --no-check-certificate %downvscode%
-7za x %arqvscode%
-del /F %arqvscode%
-mkdir userdir
-cd userdir 
-mkdir User
-cd %~dp0
-copy settings.json "%VSCODE_HOME%\userdir\User"
-::pause
-::GOTO :TOP
-GOTO :ExecINSTEXTVSCODE
-
-:::::: ok
 :BaixaANDROID
-:: ECHO %~dp0
 cd "%ANDROID_STUDIO_HOME%"
 cd..
 wget --no-check-certificate %downandroidstudio%
@@ -716,9 +656,15 @@ del %arqandroidstudio%
 pause
 GOTO :TOP
 
-:::::: ok
+:BaixaDBEAVER
+cd %~dp0
+wget --no-check-certificate %downdbeaver%
+7za x %arqdbeaver%
+del /F %arqdbeaver%
+pause
+GOTO :TOP
+
 :BaixaFlutter
-:: ECHO %~dp0
 cd %~dp0
 wget --no-check-certificate %downflutter%
 if exist flutter (
@@ -729,118 +675,7 @@ del /F %arqflutter%
 pause
 GOTO :TOP
 
-:::::: ok
-:BaixaGradle
-:: ECHO %~dp0
-cd %~dp0
-wget --no-check-certificate %downgradle%
-if exist gradle (
-	rmdir /S /Q gradle
-)
-7za x %arqgradle% 
-del /F %arqgradle%
-ren %nomegradle% gradle
-cd %~dp0
-pause
-GOTO :TOP
-
-:::::: ok
-:BaixaSDKANDROID
-:: ECHO %~dp0
-cd "%ANDROID_HOME%"
-wget --no-check-certificate %downcommandlinetools%
-wget --no-check-certificate %downplatformtools%
-7za x %arqcommandlinetools% -ocmdline-tools
-cd cmdline-tools
-ren cmdline-tools latest
-cd..
-del %arqcommandlinetools%*
-7za x %arqplatformtools%
-del %arqplatformtools%*
-pause
-GOTO :TOP
-
-:BaixaNode
-:: ECHO %~dp0
-cd %~dp0
-wget --no-check-certificate %downnode%
-if exist node (
-	rmdir /S /Q node
-)
-7za x %arqnode% 
-del /F %arqnode%
-ren %nomenode% node
-::start "VueCLI" cmd /c "npm install -g @vue/cli"
-cd %~dp0
-GOTO :BaixaGIT
-
-:BaixaJDK
-:: ECHO %~dp0
-cd %~dp0
-if exist jdk (
-	rmdir /S /Q jdk
-)
-wget --no-check-certificate %downjdk%
-7za x %arqjdk%
-del /F %arqjdk% 
-ren %nomejdk% jdk
-cd %~dp0
-GOTO :BaixaMaven
-
-:BaixaMaven
-:: ECHO %~dp0
-cd %~dp0
-wget --no-check-certificate %downmaven%
-if exist maven (
-	rmdir /S /Q maven
-)
-7za x %arqmaven% 
-del /F %arqmaven%
-ren %nomemaven% maven
-cd %~dp0
-GOTO :TOP
-
-:BaixaNETBEANS
-:: ECHO %~dp0
-cd %~dp0
-if exist "%NETBEANS_HOME%" (
-	rmdir /q /s "%NETBEANS_HOME%"
-)
-:: mkdir %NETBEANS_HOME%
-wget --no-check-certificate %downnetbeans%
-7za x %arqnetbeans%
-del /F %arqnetbeans%
-pause
-GOTO :TOP
-
-:BaixaNOTEPAD
-cd %~dp0
-if exist "%NOTEPAD_HOME%" (
-	rmdir /q /s "%NOTEPAD_HOME%"
-)
-wget --auth-no-challenge %downnotepad% 
-::wget --no-check-certificate %downnotepad% -o %arqnotepad%
-7za x %arqnotepad% -onotepad
-del /F %arqnotepad%
-pause
-GOTO :Top
-
-:BaixaPOSTMAN
-cd %~dp0
-::wget --no-check-certificate %downpostman%
-wget --no-check-certificate %downpostman% -O %arqpostman%
-pause
-GOTO :Top
-
-:BaixaINSOMNIA
-cd %~dp0
-::wget --no-check-certificate %downinsomnia%
-wget --no-check-certificate %downinsomnia% -O %arqinsomnia%
-pause
-GOTO :Top
-
 :BaixaGIT
-:: ECHO %~dp0
 cd %~dp0
 if exist git (
 	rmdir /S /Q git
@@ -854,17 +689,77 @@ pause
 cd %~dp0
 GOTO :TOP
 
-:BaixaDBEAVER
-:: ECHO %~dp0
+:BaixaGradle
 cd %~dp0
-wget --no-check-certificate %downdbeaver%
-7za x %arqdbeaver%
-del /F %arqdbeaver%
+wget --no-check-certificate %downgradle%
+if exist gradle (
+	rmdir /S /Q gradle
+)
+7za x %arqgradle% 
+del /F %arqgradle%
+ren %nomegradle% gradle
+cd %~dp0
+pause
+GOTO :TOP
+
+:BaixaJDK
+cd %~dp0
+if exist jdk (
+	rmdir /S /Q jdk
+)
+wget --no-check-certificate %downjdk%
+7za x %arqjdk%
+del /F %arqjdk% 
+ren %nomejdk% jdk
+cd %~dp0
+GOTO :BaixaMaven
+
+:BaixaMaven
+cd %~dp0
+wget --no-check-certificate %downmaven%
+if exist maven (
+	rmdir /S /Q maven
+)
+7za x %arqmaven% 
+del /F %arqmaven%
+ren %nomemaven% maven
+cd %~dp0
+GOTO :TOP
+
+:BaixaMARIADB
+cd %~dp0
+wget --no-check-certificate %downmariadb%
+if exist mariadb (
+	rmdir /S /Q mariadb
+)
+7za x %arqmariadb% 
+del /F %arqmariadb%
+ren %nomemariadb% mariadb
+GOTO :TOP
+
+:BaixaMongoDB
+cd %~dp0
+wget --no-check-certificate %downmongodb% -O %arqmongodb%
+if exist "%MONGODB_HOME%" (
+	rmdir /S /Q "%MONGODB_HOME%"
+)
+mkdir "%MONGODB_HOME%" && mkdir "%MONGODB_HOME%\data"
+msiexec /a "%arqmongodb%" /qb TARGETDIR="%MONGODB_HOME%" && del /F %arqmongodb%
+pause
+GOTO :TOP
+
+:BaixaMongoSH
+cd %~dp0
+wget --no-check-certificate %downmongosh% -O %arqmongosh%
+if exist "%MONGOSH_HOME%" (
+	rmdir /S /Q "%MONGOSH_HOME%"
+)
+7za x %arqmongosh% && del /F %arqmongosh%
+ren %nomemongosh% mongosh
 pause
 GOTO :TOP
 
 :BaixaMYSQL
-:: ECHO %~dp0
 cd %~dp0
 wget --no-check-certificate %downmysql%
 if exist mysql (
@@ -875,68 +770,7 @@ del /F %arqmysql%
 ren %nomemysql% mysql
 GOTO :TOP
 
-:BaixaMARIADB
-:: ECHO %~dp0
-cd %~dp0
-wget --no-check-certificate %downmariadb%
-if exist mariadb (
-	rmdir /S /Q mariadb
-)
-7za x %arqmariadb% 
-del /F %arqmariadb%
-ren %nomemariadb% mariadb
-GOTO :Top
-
-:BaixaPOSTGRES
-:: ECHO %~dp0
-cd %~dp0
-wget --no-check-certificate %downpostgres%
-if exist pgsql (
-	rmdir /S /Q pgsql
-)
-7za x %arqpostgres% 
-del /F %arqpostgres%
-::GOTO :BaixaDBEAVER
-GOTO :TOP
-
-:BaixaPYTHON
-:: ECHO %~dp0
-cd %~dp0
-if exist "%PYTHON_HOME%" (
-	rmdir /S /Q "%PYTHON_HOME%"
-)
-mkdir "%PYTHON_HOME%"
-::cd "%PYTHON_HOME%"
-wget --no-check-certificate %downpython%
-::7za x %arqpython%
-%arqpython% InstallAllUsers=0 Include_launcher=0 Include_test=0 DefaultJustForMeTargetDir="%PYTHON_HOME%" SimpleInstall=1 SimpleInstallDescription="Instala em %PYTHON_HOME%"
-del /F %arqpython%
-::wget --no-check-certificate %downgetpip%
-::call python get-pip.py
-::echo Lib\site-packages >> python312._pth
-pause
-GOTO :TOP
-
-:BaixaYED
-:: ECHO %~dp0
-cd %~dp0
-wget --no-check-certificate %downyed%
-rmdir /S /Q "%YED_HOME%"
-7za x %arqyed% 
-del /F %arqyed%
-ren %nomeyed% yed
-pause
-GOTO :TOP
-
-:ExecYED
-:: ECHO %~dp0
-cd "%YED_HOME%"
-start "YED" cmd /c "java -jar yed.jar"
-GOTO :TOP
-
-
 :BaixaNEO4J
-:: ECHO %~dp0
 cd %~dp0
 wget --no-check-certificate %downneo4j% -O %arqneo4j%
 if exist "%NEO4J_HOME%" (
@@ -948,47 +782,18 @@ ren %nomeneo4j% neo4j
 pause
 GOTO :TOP
 
-:BaixaMongoDB
-:: ECHO %~dp0
+:BaixaNETBEANS
 cd %~dp0
-wget --no-check-certificate %downmongodb% -O %arqmongodb%
-if exist "%MONGODB_HOME%" (
-	rmdir /S /Q "%MONGODB_HOME%"
+if exist "%NETBEANS_HOME%" (
+	rmdir /q /s "%NETBEANS_HOME%"
 )
-mkdir "%MONGODB_HOME%" && mkdir "%MONGODB_HOME%\data"
-::7za x %arqmongodb%
-msiexec /a "%arqmongodb%" /qb TARGETDIR="%MONGODB_HOME%" && del /F %arqmongodb%
-::ren %nomemongodb% mongodb
-pause
-GOTO :TOP
-
-:BaixaMongoSH
-:: ECHO %~dp0
-cd %~dp0
-wget --no-check-certificate %downmongosh% -O %arqmongosh%
-if exist "%MONGOSH_HOME%" (
-	rmdir /S /Q "%MONGOSH_HOME%"
-)
-7za x %arqmongosh% && del /F %arqmongosh%
-pause
-ren %nomemongosh% mongosh
-pause
-GOTO :TOP
-
-:BaixaPUTTY
-:: ECHO %~dp0
-cd %~dp0
-if exist "%PUTTY_HOME%" (
-	rmdir /S /Q "%PUTTY_HOME%"	
-)
-mkdir "%PUTTY_HOME%"
-cd "%PUTTY_HOME%"
-wget --no-check-certificate %downputty%
+wget --no-check-certificate %downnetbeans%
+7za x %arqnetbeans%
+del /F %arqnetbeans%
 pause
 GOTO :TOP
 
 :BaixaNetCore
-:: ECHO %~dp0
 cd %~dp0
 if exist "%DOTNET_HOME%" (
 	rmdir /S /Q "%DOTNET_HOME%"
@@ -1001,3 +806,97 @@ wget --no-check-certificate %downaspnetcore%
 7za x %arqaspnetcore% && del /F %arqaspnetcore%
 pause
 GOTO :TOP
+
+:BaixaNode
+cd %~dp0
+wget --no-check-certificate %downnode%
+if exist node (
+	rmdir /S /Q node
+)
+7za x %arqnode% 
+del /F %arqnode%
+ren %nomenode% node
+cd %~dp0
+GOTO :BaixaGIT
+
+:BaixaNOTEPAD
+cd %~dp0
+if exist "%NOTEPAD_HOME%" (
+	rmdir /q /s "%NOTEPAD_HOME%"
+)
+wget --auth-no-challenge %downnotepad% 
+7za x %arqnotepad% -onotepad
+del /F %arqnotepad%
+pause
+GOTO :TOP
+
+:BaixaPOSTGRES
+cd %~dp0
+wget --no-check-certificate %downpostgres%
+if exist pgsql (
+	rmdir /S /Q pgsql
+)
+7za x %arqpostgres% 
+del /F %arqpostgres%
+GOTO :TOP
+
+:BaixaPOSTMAN
+cd %~dp0
+wget --no-check-certificate %downpostman% -O %arqpostman%
+pause
+GOTO :TOP
+
+:BaixaINSOMNIA
+cd %~dp0
+wget --no-check-certificate %downinsomnia% -O %arqinsomnia%
+pause
+GOTO :TOP
+
+:BaixaPUTTY
+cd %~dp0
+if exist "%PUTTY_HOME%" (
+	rmdir /S /Q "%PUTTY_HOME%"	
+)
+mkdir "%PUTTY_HOME%"
+cd "%PUTTY_HOME%"
+wget --no-check-certificate %downputty%
+pause
+GOTO :TOP
+
+:BaixaPYTHON
+cd %~dp0
+if exist "%PYTHON_HOME%" (
+	rmdir /S /Q "%PYTHON_HOME%"
+)
+mkdir "%PYTHON_HOME%"
+wget --no-check-certificate %downpython%
+%arqpython% InstallAllUsers=0 Include_launcher=0 Include_test=0 DefaultJustForMeTargetDir="%PYTHON_HOME%" SimpleInstall=1 SimpleInstallDescription="Instala em %PYTHON_HOME%"
+del /F %arqpython%
+pause
+GOTO :TOP
+
+:BaixaSDKANDROID
+cd "%ANDROID_HOME%"
+wget --no-check-certificate %downcommandlinetools%
+wget --no-check-certificate %downplatformtools%
+7za x %arqcommandlinetools% -ocmdline-tools
+cd cmdline-tools
+ren cmdline-tools latest
+cd..
+del %arqcommandlinetools%*
+7za x %arqplatformtools%
+del %arqplatformtools%*
+pause
+GOTO :TOP
+
+:BaixaVSCODE
+cd "%VSCODE_HOME%"
+wget --no-check-certificate %downvscode%
+7za x %arqvscode%
+del /F %arqvscode%
+mkdir userdir
+cd userdir 
+mkdir User
+cd %~dp0
+copy settings.json "%VSCODE_HOME%\userdir\User"
+GOTO :ExecINSTEXTVSCODE
