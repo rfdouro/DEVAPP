@@ -6,10 +6,9 @@
 
 ---
 
-## 2. Pré‑requisitos
+## 2. Pré-requisitos
 
 - Sistema operacional Windows (64 bits).
-- Permissão de administrador (recomendado para instalações que exigem registro ou serviços).
 - Conexão com a Internet para download das ferramentas.
 - Espaço em disco suficiente para os pacotes escolhidos (cada ferramenta pode ocupar de centenas de MB a alguns GB).
 
