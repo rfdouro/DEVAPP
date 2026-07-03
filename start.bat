@@ -601,19 +601,13 @@ call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_H
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-dotnettools.csharp ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-dotnettools.vscode-dotnet-runtime ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension obrejla.netbeans-light-theme ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension octref.vetur ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension pkief.material-icon-theme ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.fabric8-analytics ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.java ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-community-server-connector ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-rsp-ui ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-server-connector ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-xml ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ritwickdey.liveserver ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension visualstudioexptteam.intellicode-api-usage-examples ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension visualstudioexptteam.vscodeintellicode ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vmware.vscode-boot-dev-pack ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vmware.vscode-spring-boot ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-debug ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-dependency ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-pack ^
@@ -631,7 +625,15 @@ call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_H
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension alexisvt.flutter-snippets ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dart-code.dart-code ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dart-code.flutter ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension rexthedev.flutter-preview ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension eamodio.gitlens ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension streetsidesoftware.code-spell-checker ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension aaron-bond.better-comments ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension gruntfuggly.todo-tree ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dsznajder.es7-react-js-snippets ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-python.python ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-python.vscode-pylance ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-gradle
+
 pause
 GOTO :TOP
 
