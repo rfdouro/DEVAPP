@@ -147,5 +147,5 @@
     "default": "beside",
     "inspector": "sidebar"
   },
-  "mdb.confirmRunAll": false,
+  "mdb.confirmRunAll": false
 }

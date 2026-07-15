@@ -1,4 +1,4 @@
-# Documentação do DEVAPP (Atualizada)
+# Documentação do DEVAPP
 
 ## 1. Visão Geral
 
