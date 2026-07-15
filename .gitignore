@@ -5,7 +5,6 @@
 # Permite que o Git rastreie pastas específicas
 !/icons/
 !/sevenzip/
-!/vscode/
 !/wget/
 
 # Permite arquivos específicos
