@@ -19,8 +19,9 @@ echo.%now%
 ::set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/5437499feb04f7a586f677b155b039bc2b3669eb/VSCode-win32-x64-1.90.2.zip
 ::set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/f1a4fb101478ce6ec82fe9627c43efbf9e98c813/VSCode-win32-x64-1.95.3.zip
 ::set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/03c265b1adee71ac88f833e065f7bb956b60550a/VSCode-win32-x64-1.105.0.zip
-set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/ce099c1ed25d9eb3076c11e4a280f3eb52b4fbeb/VSCode-win32-x64-1.111.0.zip
-set arqvscode=VSCode-win32-x64-1.111.0.zip
+::set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/ce099c1ed25d9eb3076c11e4a280f3eb52b4fbeb/VSCode-win32-x64-1.111.0.zip
+set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/5264f2156cbcd7aea5fd004d29eaa10209155d66/VSCode-win32-x64-1.128.1.zip
+set arqvscode=VSCode-win32-x64-1.128.1.zip
 set nomevscode=vscode
 
 ::link dos arquivos -> mais lento
@@ -293,6 +294,7 @@ ECHO (17 ) PUTTY
 ECHO (18 ) PYTHON
 ECHO (19 ) SDK ANDROID CLI BÁSICO
 ECHO (20 ) VSCODE + CONFIGURAÇÕES
+ECHO (21 ) GERENCIAR EXTENSÕES VSCODE (por categorias)
 ECHO :::::::::::::::::::::::::::::::::::::::::::::::::::::
 SET /P UserInput=Escolha uma opcao: 
 ECHO.
@@ -322,6 +324,7 @@ if %Evaluated% EQU %UserInput% (
 	IF %UserInput% EQU 18 ( GOTO :BaixaPYTHON )
 	IF %UserInput% EQU 19 ( GOTO :BaixaSDKANDROID )
 	IF %UserInput% EQU 20 ( GOTO :BaixaVSCODE )
+	IF %UserInput% EQU 21 ( GOTO :GerenciarExtensoes )
 ) ELSE (
     ECHO Non-Integer
 )
@@ -576,66 +579,66 @@ GOTO :TOP
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:ExecINSTEXTVSCODE
-ECHO ---------------------------------------
-@ECHO Instalacao de extensoes do VSCODE
-@ECHO OFF
-ECHO Em %VSCODE_HOME%
-ECHO ---------------------------------------
-cd "%VSCODE_HOME%\bin\"
-call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension christian-kohler.npm-intellisense ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension christian-kohler.path-intellisense ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dbaeumer.vscode-eslint ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension editorconfig.editorconfig ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension esbenp.prettier-vscode ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.auto-close-tag ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.auto-rename-tag ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.code-runner ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.dotnet ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension grogdunn.netbeans-keybindings ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension hollowtree.vue-snippets ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension jakewilson.vscode-cdnjs ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension jmrog.vscode-nuget-package-manager ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension juhahinkula.thymeleaf ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension mrmlnc.vscode-scss ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-dotnettools.csharp ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-dotnettools.vscode-dotnet-runtime ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension obrejla.netbeans-light-theme ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension pkief.material-icon-theme ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.java ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-community-server-connector ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-rsp-ui ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-server-connector ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-xml ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ritwickdey.liveserver ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-debug ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-dependency ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-pack ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-test ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-maven ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-spring-boot-dashboard ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-spring-initializr ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscode-icons-team.vscode-icons ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vue.volar ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension yzhang.markdown-all-in-one ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension zignd.html-css-class-completion ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension wscats.vue ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension mechatroner.rainbow-csv ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension samuel-weinhardt.vscode-jsp-lang ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension alexisvt.flutter-snippets ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dart-code.dart-code ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dart-code.flutter ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension eamodio.gitlens ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension streetsidesoftware.code-spell-checker ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension aaron-bond.better-comments ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension gruntfuggly.todo-tree ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dsznajder.es7-react-js-snippets ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-python.python ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-python.vscode-pylance ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-gradle
+@REM :ExecINSTEXTVSCODE
+@REM ECHO ---------------------------------------
+@REM @ECHO Instalacao de extensoes do VSCODE
+@REM @ECHO OFF
+@REM ECHO Em %VSCODE_HOME%
+@REM ECHO ---------------------------------------
+@REM cd "%VSCODE_HOME%\bin\"
+@REM call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension christian-kohler.npm-intellisense ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension christian-kohler.path-intellisense ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dbaeumer.vscode-eslint ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension editorconfig.editorconfig ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension esbenp.prettier-vscode ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.auto-close-tag ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.auto-rename-tag ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.code-runner ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.dotnet ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension grogdunn.netbeans-keybindings ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension hollowtree.vue-snippets ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension jakewilson.vscode-cdnjs ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension jmrog.vscode-nuget-package-manager ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension juhahinkula.thymeleaf ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension mrmlnc.vscode-scss ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-dotnettools.csharp ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-dotnettools.vscode-dotnet-runtime ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension obrejla.netbeans-light-theme ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension pkief.material-icon-theme ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.java ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-community-server-connector ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-rsp-ui ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-server-connector ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-xml ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ritwickdey.liveserver ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-debug ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-dependency ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-pack ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-test ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-maven ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-spring-boot-dashboard ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-spring-initializr ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscode-icons-team.vscode-icons ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vue.volar ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension yzhang.markdown-all-in-one ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension zignd.html-css-class-completion ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension wscats.vue ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension mechatroner.rainbow-csv ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension samuel-weinhardt.vscode-jsp-lang ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension alexisvt.flutter-snippets ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dart-code.dart-code ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dart-code.flutter ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension eamodio.gitlens ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension streetsidesoftware.code-spell-checker ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension aaron-bond.better-comments ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension gruntfuggly.todo-tree ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dsznajder.es7-react-js-snippets ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-python.python ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-python.vscode-pylance ^
+@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-gradle
 
-pause
-GOTO :TOP
+@REM pause
+@REM GOTO :TOP
 
 :ExecINSTVUE
 start "Instala vue" cmd /c "npm i -g @vue/cli"
@@ -901,4 +904,195 @@ cd userdir
 mkdir User
 cd %~dp0
 copy settings.json "%VSCODE_HOME%\userdir\User"
-GOTO :ExecINSTEXTVSCODE
+::GOTO :ExecINSTEXTVSCODE
+GOTO :TOP
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: Gerenciamento de extensões do VS Code por categorias
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:GerenciarExtensoes
+cls
+color A0
+ECHO --- GERENCIAR EXTENSÕES VSCODE ------------------------
+ECHO ( 0 ) Voltar
+ECHO -----------------------------------------------------
+ECHO ( 1 ) JAVA / SPRING
+ECHO ( 2 ) FRONTEND (HTML/CSS/JS/Vue/React)
+ECHO ( 3 ) PYTHON
+ECHO ( 4 ) .NET / C#
+ECHO ( 5 ) FLUTTER / DART
+ECHO ( 6 ) UTILITÁRIOS (Git, Markdown, etc.)
+ECHO ( 7 ) TODAS AS EXTENSÕES (instalação completa)
+ECHO :::::::::::::::::::::::::::::::::::::::::::::::::::::
+SET /P UserInput=Escolha uma opcao: 
+ECHO.
+cls
+ECHO Opcao escolhida = %UserInput%
+ECHO.
+SET /A Evaluated=UserInput
+if %Evaluated% EQU %UserInput% (
+	IF %UserInput% EQU 0 ( GOTO :Instalar )
+	IF %UserInput% EQU 1 ( GOTO :InstalarExtJava )
+	IF %UserInput% EQU 2 ( GOTO :InstalarExtFront )
+	IF %UserInput% EQU 3 ( GOTO :InstalarExtPython )
+	IF %UserInput% EQU 4 ( GOTO :InstalarExtDotnet )
+	IF %UserInput% EQU 5 ( GOTO :InstalarExtFlutter )
+	IF %UserInput% EQU 6 ( GOTO :InstalarExtUtils )
+	IF %UserInput% EQU 7 ( GOTO :InstalarExtTodas )
+) ELSE (
+    ECHO Non-Integer
+)
+GOTO :GerenciarExtensoes
+
+:InstalarExtJava
+ECHO Instalando extensões para Java/Spring...
+cd "%VSCODE_HOME%\bin\"
+call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.java ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-debug ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-dependency ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-pack ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-test ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-maven ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-spring-initializr ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-spring-boot-dashboard ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-gradle ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vmware.vscode-spring-boot ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vmware.vscode-boot-dev-pack ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-community-server-connector ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-rsp-ui ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-server-connector ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-xml ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension juhahinkula.thymeleaf ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension samuel-weinhardt.vscode-jsp-lang
+pause
+GOTO :GerenciarExtensoes
+
+:InstalarExtFront
+ECHO Instalando extensões para Frontend (HTML/CSS/JS/Vue/React)...
+cd "%VSCODE_HOME%\bin\"
+call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension esbenp.prettier-vscode ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dbaeumer.vscode-eslint ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.auto-close-tag ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.auto-rename-tag ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.code-runner ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ritwickdey.liveserver ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension zignd.html-css-class-completion ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension mrmlnc.vscode-scss ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vue.volar ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension wscats.vue ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension hollowtree.vue-snippets ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dsznajder.es7-react-js-snippets ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension jakewilson.vscode-cdnjs
+pause
+GOTO :GerenciarExtensoes
+
+:InstalarExtPython
+ECHO Instalando extensões para Python...
+cd "%VSCODE_HOME%\bin\"
+call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-python.python ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-python.vscode-pylance
+pause
+GOTO :GerenciarExtensoes
+
+:InstalarExtDotnet
+ECHO Instalando extensões para .NET/C#...
+cd "%VSCODE_HOME%\bin\"
+call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-dotnettools.csharp ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-dotnettools.vscode-dotnet-runtime ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.dotnet ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension jmrog.vscode-nuget-package-manager
+pause
+GOTO :GerenciarExtensoes
+
+:InstalarExtFlutter
+ECHO Instalando extensões para Flutter/Dart...
+cd "%VSCODE_HOME%\bin\"
+call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dart-code.dart-code ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dart-code.flutter ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension alexisvt.flutter-snippets ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension rexthedev.flutter-preview
+pause
+GOTO :GerenciarExtensoes
+
+:InstalarExtUtils
+ECHO Instalando extensões utilitárias...
+cd "%VSCODE_HOME%\bin\"
+call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension eamodio.gitlens ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension streetsidesoftware.code-spell-checker ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension aaron-bond.better-comments ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension gruntfuggly.todo-tree ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension yzhang.markdown-all-in-one ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension pkief.material-icon-theme ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscode-icons-team.vscode-icons ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension editorconfig.editorconfig ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension christian-kohler.npm-intellisense ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension christian-kohler.path-intellisense ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension mechatroner.rainbow-csv ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension grogdunn.netbeans-keybindings ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension obrejla.netbeans-light-theme ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension marp-team.marp-vscode ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension yzane.markdown-pdf
+pause
+GOTO :GerenciarExtensoes
+
+:InstalarExtTodas
+ECHO Instalando TODAS as extensões (pode demorar)...
+cd "%VSCODE_HOME%\bin\"
+call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.java ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-debug ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-dependency ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-pack ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-test ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-maven ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-spring-initializr ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-spring-boot-dashboard ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-gradle ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vmware.vscode-spring-boot ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension esbenp.prettier-vscode ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dbaeumer.vscode-eslint ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.auto-close-tag ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.auto-rename-tag ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.code-runner ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ritwickdey.liveserver ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension zignd.html-css-class-completion ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension mrmlnc.vscode-scss ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vue.volar ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension wscats.vue ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension hollowtree.vue-snippets ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dsznajder.es7-react-js-snippets ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-python.python ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-python.vscode-pylance ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-dotnettools.csharp ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-dotnettools.vscode-dotnet-runtime ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.dotnet ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension jmrog.vscode-nuget-package-manager ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dart-code.dart-code ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dart-code.flutter ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension alexisvt.flutter-snippets ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension eamodio.gitlens ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension streetsidesoftware.code-spell-checker ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension aaron-bond.better-comments ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension gruntfuggly.todo-tree ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension yzhang.markdown-all-in-one ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension pkief.material-icon-theme ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscode-icons-team.vscode-icons ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension editorconfig.editorconfig ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension christian-kohler.npm-intellisense ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension christian-kohler.path-intellisense ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension mechatroner.rainbow-csv ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension grogdunn.netbeans-keybindings ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension obrejla.netbeans-light-theme ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vmware.vscode-boot-dev-pack ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-community-server-connector ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-rsp-ui ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-server-connector ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-xml ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension juhahinkula.thymeleaf ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension samuel-weinhardt.vscode-jsp-lang ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension jakewilson.vscode-cdnjs ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension rexthedev.flutter-preview ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension marp-team.marp-vscode ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension yzane.markdown-pdf
+pause
+GOTO :GerenciarExtensoes

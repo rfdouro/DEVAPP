@@ -17,7 +17,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[dart]": {
-    "editor.hover.enabled": false
+    "editor.hover.enabled": "off"
   },
   "rsp-ui.enableStartServerOnActivation": [
     {
@@ -77,7 +77,7 @@
   "editor.parameterHints.enabled": false,
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "html.suggest.html5": false,
-  "editor.hover.enabled": true,
+  "editor.hover.enabled": "on",
   //esconde os nomes de parâmetros inline
   "editor.inlayHints.enabled": "off",
   "gitlens.defaultDateLocale": null,
