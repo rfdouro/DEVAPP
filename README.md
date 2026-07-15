@@ -106,7 +106,7 @@ Ao escolher a opção 21, você verá um menu com as seguintes categorias:
 
 Cada categoria pode ser instalada independentemente, permitindo que você escolha apenas o que realmente precisa. As extensões são instaladas no diretório `vscode\extensions` e os dados do usuário ficam em `vscode\userdir`, mantendo a portabilidade.
 
-> **Dica**: Se você já instalou o VS Code via opção 20, pode acessar este submenu a qualquer momento para adicionar ou remover extensões conforme sua necessidade.
+> **Dica**: Se você já instalou o VS Code via opção 20, pode acessar este submenu a qualquer momento para adicionar extensões indicadas conforme sua necessidade (lembrando que a opção de extensões do próprio VSCode pode ser usada).
 
 ### 4.3. Submenu **AUXILIARES**
 
