@@ -881,6 +881,10 @@ pause
 GOTO :TOP
 
 :BaixaSDKANDROID
+cd %~dp0
+if not exist "%ANDROID_HOME%" (
+	mkdir "%ANDROID_HOME%"
+)
 cd "%ANDROID_HOME%"
 wget --no-check-certificate %downcommandlinetools%
 wget --no-check-certificate %downplatformtools%
@@ -895,6 +899,10 @@ pause
 GOTO :TOP
 
 :BaixaVSCODE
+cd %~dp0
+if not exist "%VSCODE_HOME%" (
+	mkdir "%VSCODE_HOME%"
+)
 cd "%VSCODE_HOME%"
 wget --no-check-certificate %downvscode%
 7za x %arqvscode%
