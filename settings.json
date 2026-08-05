@@ -160,6 +160,13 @@
   "markdown.marp.html": "all",
   "markdown.marp.pptx.editable": "off",
   "markdown.marp.strictPathResolutionDuringExport": false,
+  "markdown-pdf.outputDirectory": "../share",
+  "markdown-pdf.outputDirectoryRelativePathFile": true,
+  "markdownStudio.export.pdfToc.hidden": true,
+  "markdownStudio.export.pdfIndex.title": "Conteúdo do documento",
+  "markdownStudio.codeBlock.lineNumbers": false,
+  "markdownStudio.export.footer.template": "<div style=\"font-size: 9px; margin-left: auto; margin-right: 1cm; \">Página <span class='pageNumber'></span> de <span class='totalPages'></span></div>",
+  "markdownStudio.export.pdfBookmarks.enabled": true,
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
