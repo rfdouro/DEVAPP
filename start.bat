@@ -655,7 +655,7 @@ GOTO :TOP
 :BaixaANDROID
 cd "%ANDROID_STUDIO_HOME%"
 cd..
-wget --no-check-certificate %downandroidstudio%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downandroidstudio%
 7za x %arqandroidstudio%
 del %arqandroidstudio%
 pause
@@ -663,7 +663,7 @@ GOTO :TOP
 
 :BaixaDBEAVER
 cd %~dp0
-wget --no-check-certificate %downdbeaver%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downdbeaver%
 7za x %arqdbeaver%
 del /F %arqdbeaver%
 pause
@@ -671,7 +671,7 @@ GOTO :TOP
 
 :BaixaFlutter
 cd %~dp0
-wget --no-check-certificate %downflutter%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downflutter%
 if exist flutter (
 	rmdir /S /Q flutter
 )
@@ -687,7 +687,7 @@ if exist git (
 )
 mkdir git
 cd "%GIT_HOME%"
-wget --no-check-certificate %downgit%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downgit%
 7za x %arqgit%
 del /F %arqgit%
 pause
@@ -696,7 +696,7 @@ GOTO :TOP
 
 :BaixaGradle
 cd %~dp0
-wget --no-check-certificate %downgradle%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downgradle%
 if exist gradle (
 	rmdir /S /Q gradle
 )
@@ -712,7 +712,7 @@ cd %~dp0
 if exist jdk (
 	rmdir /S /Q jdk
 )
-wget --no-check-certificate %downjdk%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downjdk%
 7za x %arqjdk%
 del /F %arqjdk% 
 ren %nomejdk% jdk
@@ -721,7 +721,7 @@ GOTO :BaixaMaven
 
 :BaixaMaven
 cd %~dp0
-wget --no-check-certificate %downmaven%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downmaven%
 if exist maven (
 	rmdir /S /Q maven
 )
@@ -733,7 +733,7 @@ GOTO :TOP
 
 :BaixaMARIADB
 cd %~dp0
-wget --no-check-certificate %downmariadb%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downmariadb%
 if exist mariadb (
 	rmdir /S /Q mariadb
 )
@@ -744,7 +744,7 @@ GOTO :TOP
 
 :BaixaMongoDB
 cd %~dp0
-wget --no-check-certificate %downmongodb% -O %arqmongodb%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downmongodb% -O %arqmongodb%
 if exist "%MONGODB_HOME%" (
 	rmdir /S /Q "%MONGODB_HOME%"
 )
@@ -755,7 +755,7 @@ GOTO :TOP
 
 :BaixaMongoSH
 cd %~dp0
-wget --no-check-certificate %downmongosh% -O %arqmongosh%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downmongosh% -O %arqmongosh%
 if exist "%MONGOSH_HOME%" (
 	rmdir /S /Q "%MONGOSH_HOME%"
 )
@@ -766,7 +766,7 @@ GOTO :TOP
 
 :BaixaMYSQL
 cd %~dp0
-wget --no-check-certificate %downmysql%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downmysql%
 if exist mysql (
 	rmdir /S /Q mysql
 )
@@ -777,7 +777,7 @@ GOTO :TOP
 
 :BaixaNEO4J
 cd %~dp0
-wget --no-check-certificate %downneo4j% -O %arqneo4j%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downneo4j% -O %arqneo4j%
 if exist "%NEO4J_HOME%" (
 	rmdir /S /Q "%NEO4J_HOME%"
 )
@@ -792,7 +792,7 @@ cd %~dp0
 if exist "%NETBEANS_HOME%" (
 	rmdir /q /s "%NETBEANS_HOME%"
 )
-wget --no-check-certificate %downnetbeans%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downnetbeans%
 7za x %arqnetbeans%
 del /F %arqnetbeans%
 pause
@@ -805,16 +805,16 @@ if exist "%DOTNET_HOME%" (
 )
 mkdir "%DOTNET_HOME%"
 cd "%DOTNET_HOME%"
-wget --no-check-certificate %downnetcore%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downnetcore%
 7za x %arqnetcore% && del /F %arqnetcore%
-wget --no-check-certificate %downaspnetcore%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downaspnetcore%
 7za x %arqaspnetcore% && del /F %arqaspnetcore%
 pause
 GOTO :TOP
 
 :BaixaNode
 cd %~dp0
-wget --no-check-certificate %downnode%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downnode%
 if exist node (
 	rmdir /S /Q node
 )
@@ -829,7 +829,7 @@ cd %~dp0
 if exist "%NOTEPAD_HOME%" (
 	rmdir /q /s "%NOTEPAD_HOME%"
 )
-wget --auth-no-challenge %downnotepad% 
+wget --dns-servers=8.8.8.8,1.1.1.1 --auth-no-challenge %downnotepad% 
 7za x %arqnotepad% -onotepad
 del /F %arqnotepad%
 pause
@@ -837,7 +837,7 @@ GOTO :TOP
 
 :BaixaPOSTGRES
 cd %~dp0
-wget --no-check-certificate %downpostgres%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downpostgres%
 if exist pgsql (
 	rmdir /S /Q pgsql
 )
@@ -847,13 +847,13 @@ GOTO :TOP
 
 :BaixaPOSTMAN
 cd %~dp0
-wget --no-check-certificate %downpostman% -O %arqpostman%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downpostman% -O %arqpostman%
 pause
 GOTO :TOP
 
 :BaixaINSOMNIA
 cd %~dp0
-wget --no-check-certificate %downinsomnia% -O %arqinsomnia%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downinsomnia% -O %arqinsomnia%
 pause
 GOTO :TOP
 
@@ -864,7 +864,7 @@ if exist "%PUTTY_HOME%" (
 )
 mkdir "%PUTTY_HOME%"
 cd "%PUTTY_HOME%"
-wget --no-check-certificate %downputty%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downputty%
 pause
 GOTO :TOP
 
@@ -874,7 +874,7 @@ if exist "%PYTHON_HOME%" (
 	rmdir /S /Q "%PYTHON_HOME%"
 )
 mkdir "%PYTHON_HOME%"
-wget --no-check-certificate %downpython%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downpython%
 %arqpython% InstallAllUsers=0 Include_launcher=0 Include_test=0 DefaultJustForMeTargetDir="%PYTHON_HOME%" SimpleInstall=1 SimpleInstallDescription="Instala em %PYTHON_HOME%"
 del /F %arqpython%
 pause
@@ -886,8 +886,8 @@ if not exist "%ANDROID_HOME%" (
 	mkdir "%ANDROID_HOME%"
 )
 cd "%ANDROID_HOME%"
-wget --no-check-certificate %downcommandlinetools%
-wget --no-check-certificate %downplatformtools%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downcommandlinetools%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downplatformtools%
 7za x %arqcommandlinetools% -ocmdline-tools
 cd cmdline-tools
 ren cmdline-tools latest
@@ -904,7 +904,7 @@ if not exist "%VSCODE_HOME%" (
 	mkdir "%VSCODE_HOME%"
 )
 cd "%VSCODE_HOME%"
-wget --no-check-certificate %downvscode%
+wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downvscode%
 7za x %arqvscode%
 del /F %arqvscode%
 mkdir userdir
