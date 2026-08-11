@@ -20,8 +20,9 @@ echo.%now%
 ::set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/f1a4fb101478ce6ec82fe9627c43efbf9e98c813/VSCode-win32-x64-1.95.3.zip
 ::set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/03c265b1adee71ac88f833e065f7bb956b60550a/VSCode-win32-x64-1.105.0.zip
 ::set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/ce099c1ed25d9eb3076c11e4a280f3eb52b4fbeb/VSCode-win32-x64-1.111.0.zip
-set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/5264f2156cbcd7aea5fd004d29eaa10209155d66/VSCode-win32-x64-1.128.1.zip
-set arqvscode=VSCode-win32-x64-1.128.1.zip
+::set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/5264f2156cbcd7aea5fd004d29eaa10209155d66/VSCode-win32-x64-1.128.1.zip
+set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/df53daabb18cd157bdb08c7f01c34df936cf12f4/VSCode-win32-x64-1.132.0.zip
+set arqvscode=VSCode-win32-x64-1.132.0.zip
 set nomevscode=vscode
 
 ::link dos arquivos -> mais lento
