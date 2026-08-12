@@ -1041,7 +1041,8 @@ call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_H
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension grogdunn.netbeans-keybindings ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension obrejla.netbeans-light-theme ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension marp-team.marp-vscode ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension yzane.markdown-pdf ^
+:: && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension yzane.markdown-pdf ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension kino6.markdown-studio-local ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension katsuyuzu.marp-to-editable-pptx
 pause
 GOTO :GerenciarExtensoes
@@ -1103,7 +1104,8 @@ call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_H
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension jakewilson.vscode-cdnjs ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension rexthedev.flutter-preview ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension marp-team.marp-vscode ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension yzane.markdown-pdf ^
+:: && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension yzane.markdown-pdf ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension kino6.markdown-studio-local ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension katsuyuzu.marp-to-editable-pptx
 pause
 GOTO :GerenciarExtensoes
