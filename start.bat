@@ -173,6 +173,8 @@ SET PGUSER=postgres
 SET PGPORT=5439
 SET PGLOCALEDIR=%POSTGRES_HOME%\share\locale
 
+SET SCRIPTSDIR=%~dp0%scripts
+
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: altera o path do windows adicinoando os novos diretórios
 :: adiciona o path original no final
@@ -183,6 +185,7 @@ set PathAUX=%PathAUX%;%POSTGRES_HOME%\bin
 set PathAUX=%PathAUX%;%FLUTTER_HOME%\bin
 set PathAUX=%PathAUX%;%GRADLE_HOME%\bin
 set PathAUX=%PathAUX%;%DOTNET_HOME%\;%DOTNET_ROOT%\
+set PathAUX=%PathAUX%;%SCRIPTSDIR%\
 set Path=%PathAUX%;%Path%;
 ::::::::::::::::::::::::::::::::::::::::::::::::::::
 
