@@ -6,6 +6,7 @@
 !/icons/
 !/sevenzip/
 !/wget/
+!/scripts/
 
 # Permite arquivos específicos
 !.gitattributes
