@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
 # AutoPDFBookmark – Geração automática de índices (bookmarks) em PDF
 # baseada no tamanho da fonte definido em um arquivo CSS.
 
@@ -12,12 +11,13 @@
 #     - PyMuPDF (pip install PyMuPDF)
 #     - cssutils (pip install cssutils)
 
-
 import sys
 import getopt
 import re
 import math
 import os
+import shutil
+import tempfile
 
 import fitz  # PyMuPDF
 import cssutils
@@ -118,8 +118,8 @@ def extract_headings_from_pdf(pdf_file, heading_sizes, tolerance=0.5):
                     # print(f"Pág {page_num}: '{text}' | tam={span['size']:.2f} | flags={span['flags']}")
 
                     # Ignora se não começar com número de capítulo
-                    #if not chapter_pattern.match(text):
-                    #    continue
+                    # if not chapter_pattern.match(text):
+                    #     continue
 
                     pdf_size = span["size"]
                     # Compara com cada nível definido no CSS
@@ -142,6 +142,7 @@ def extract_headings_from_pdf(pdf_file, heading_sizes, tolerance=0.5):
 def add_bookmarks_to_pdf(pdf_file, headings, output_file=None):
     """
     Adiciona os bookmarks ao PDF a partir da lista de cabeçalhos extraídos.
+    Se output_file for None, substitui o arquivo original.
     """
     if not headings:
         print("Nenhum cabeçalho encontrado para gerar bookmarks.")
@@ -172,13 +173,27 @@ def add_bookmarks_to_pdf(pdf_file, headings, output_file=None):
 
     doc.set_toc(toc)
 
+    # Salva o PDF
     if output_file is None:
-        base, ext = os.path.splitext(pdf_file)
-        output_file = f"{base}_com_bookmarks.pdf"
-
-    doc.save(output_file)
-    doc.close()
-    print(f"✅ Bookmarks adicionados com sucesso! Arquivo salvo como: {output_file}")
+        # Salva em um arquivo temporário e depois substitui o original
+        try:
+            with tempfile.NamedTemporaryFile(delete=False, suffix='.pdf') as tmp:
+                temp_path = tmp.name
+            doc.save(temp_path)
+            doc.close()
+            # Substitui o original pelo temporário
+            shutil.move(temp_path, pdf_file)
+            print(f"✅ Bookmarks adicionados com sucesso! Arquivo original substituído: {pdf_file}")
+        except Exception as e:
+            print(f"Erro ao substituir o arquivo original: {e}")
+            # Tenta remover o temporário se ainda existir
+            if os.path.exists(temp_path):
+                os.remove(temp_path)
+            sys.exit(1)
+    else:
+        doc.save(output_file)
+        doc.close()
+        print(f"✅ Bookmarks adicionados com sucesso! Arquivo salvo como: {output_file}")
 
 
 def main(argv):
@@ -216,7 +231,7 @@ def main(argv):
     # 2. Extração dos cabeçalhos do PDF
     headings = extract_headings_from_pdf(pdf_file, heading_sizes, tolerance)
 
-    # 3. Adição dos bookmarks
+    # 3. Adição dos bookmarks (sem output -> substitui o original)
     add_bookmarks_to_pdf(pdf_file, headings)
 
 
