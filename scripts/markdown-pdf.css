@@ -83,3 +83,20 @@ hr::after {
   position: relative;
   top: -13px;
 }
+
+table {
+  border-collapse: collapse;
+  /* Remove o espaço entre as bordas das células */
+  width: 100%;
+  /* Opcional: faz a tabela ocupar a largura total */
+}
+
+tr {
+  border-bottom: 1px solid #ccc;
+  /* Aplica a borda inferior na linha */
+}
+
+th,
+td {
+  border-bottom: 1px solid #ccc;
+}
