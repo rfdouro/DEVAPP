@@ -100,6 +100,7 @@ def extract_headings_from_pdf(pdf_file, heading_sizes, tolerance=0.5):
 
     # Padrão para números de capítulo: "1.", "1.1", "1.1.1", etc.
     chapter_pattern = re.compile(r'^(\d+\.\d+\.\d+)|(\d+\.\d+)|(\d+\.)')
+    chapter_patterntralha = re.compile(r'^#')
 
     for page_num in range(1, len(doc) + 1):
         page = doc[page_num - 1]
@@ -120,6 +121,10 @@ def extract_headings_from_pdf(pdf_file, heading_sizes, tolerance=0.5):
                     # Ignora se não começar com número de capítulo
                     # if not chapter_pattern.match(text):
                     #     continue
+
+                    # Ignora se não começar com # 
+                    if not chapter_patterntralha.match(text):
+                        continue
 
                     pdf_size = span["size"]
                     # Compara com cada nível definido no CSS
