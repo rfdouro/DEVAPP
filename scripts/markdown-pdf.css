@@ -17,6 +17,23 @@ img {
   border: #2011a5 1px solid;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Permite que o texto continue na linha de baixo naturalmente */
+  white-space: normal !important;
+
+  /* Garante que o contêiner exiba todo o conteúdo */
+  overflow: visible !important;
+
+  /* Evita que palavras gigantescas quebrem o layout (opcional) */
+  word-wrap: break-word !important;
+  word-break: normal !important;
+}
+
 h1 {
   font-family: Arial;
   font-size: 24pt;
