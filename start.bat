@@ -1,8 +1,8 @@
 @echo off
 chcp 65001 > nul
 
-set lastcommit=$Format:%ai$
-set author=$Format:%an$
+set lastcommit=2026-10-05 07:26:00 -0300
+set author=Rômulo F. Douro
 
 set now=%date:~6,4%-%date:~3,2%-%date:~0,2% %time:~0,2%:%time:~3,2%
 echo.%now%
@@ -16,39 +16,23 @@ echo.%now%
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: variáveis com url para download dos programas complementares
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
-::set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/5437499feb04f7a586f677b155b039bc2b3669eb/VSCode-win32-x64-1.90.2.zip
-::set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/f1a4fb101478ce6ec82fe9627c43efbf9e98c813/VSCode-win32-x64-1.95.3.zip
-::set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/03c265b1adee71ac88f833e065f7bb956b60550a/VSCode-win32-x64-1.105.0.zip
-::set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/ce099c1ed25d9eb3076c11e4a280f3eb52b4fbeb/VSCode-win32-x64-1.111.0.zip
-::set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/5264f2156cbcd7aea5fd004d29eaa10209155d66/VSCode-win32-x64-1.128.1.zip
-::set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/df53daabb18cd157bdb08c7f01c34df936cf12f4/VSCode-win32-x64-1.132.0.zip
-::set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/645f29cc3176500b4b5762ba887cf2a7f0ffdf2c/VSCode-win32-x64-1.137.0.zip
 set downvscode=https://vscode.download.prss.microsoft.com/dbazure/download/stable/07f806f999227108933c2e30515b26eecc1fda74/VSCode-win32-x64-1.140.0.zip
 set arqvscode=VSCode-win32-x64-1.140.0.zip
 set nomevscode=vscode
 
-::link dos arquivos -> mais lento
-::set downnetbeans=https://archive.apache.org/dist/netbeans/netbeans/25/netbeans-25-bin.zip
-::set downnetbeans=https://dlcdn.apache.org/netbeans/netbeans/26/netbeans-26-bin.zip
 set downnetbeans=https://dlcdn.apache.org/netbeans/netbeans/27/netbeans-27-bin.zip
 set arqnetbeans=netbeans-27-bin.zip
 set nomenetbeans=netbeans
 
-:: set downandroidstudio=https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2024.3.2.14/android-studio-2024.3.2.14-windows.zip
 set downandroidstudio=https://edgedl.me.gvt1.com/android/studio/ide-zips/2025.2.3.9/android-studio-2025.2.3.9-windows.zip
 set arqandroidstudio=android-studio-2025.2.3.9-windows.zip
-:: set downcommandlinetools=https://dl.google.com/android/repository/commandlinetools-win-13114758_latest.zip
 set downcommandlinetools=https://dl.google.com/android/repository/commandlinetools-win-14742923_latest.zip
 set arqcommandlinetools=commandlinetools-win-14742923_latest.zip
 set downplatformtools=https://dl.google.com/android/repository/platform-tools-latest-windows.zip
 set arqplatformtools=platform-tools-latest-windows.zip
-:: set downflutter=https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.29.3-stable.zip
 set downflutter=https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.38.9-stable.zip
 set arqflutter=flutter_windows_3.38.9-stable.zip
 
-::set downnode=https://nodejs.org/download/release/v18.19.0/node-v18.19.0-win-x64.zip
-::set arqnode=node-v18.19.0-win-x64.zip
-::set nomenode=node-v18.19.0-win-x64
 set downnode=https://nodejs.org/dist/v24.18.0/node-v24.18.0-win-x64.zip
 set arqnode=node-v24.18.0-win-x64.zip
 set nomenode=node-v24.18.0-win-x64
@@ -57,9 +41,6 @@ set nomenode=node-v24.18.0-win-x64
 set downjdk=https://download.java.net/java/GA/jdk21.0.2/f2283984656d49d69e91c558476027ac/13/GPL/openjdk-21.0.2_windows-x64_bin.zip
 set arqjdk=openjdk-21.0.2_windows-x64_bin.zip
 set nomejdk=jdk-21.0.2
-::set downjdk=https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_windows-x64_bin.zip
-::set arqjdk=openjdk-17.0.2_windows-x64_bin.zip
-::set nomejdk=jdk-17.0.2
 
 set downgradle=https://services.gradle.org/distributions/gradle-8.12-bin.zip
 set arqgradle=gradle-8.12-bin.zip
@@ -80,7 +61,6 @@ set nomemariadb=mariadb-11.4.2-winx64
 set downgit=https://github.com/git-for-windows/git/releases/download/v2.41.0.windows.3/PortableGit-2.41.0.3-64-bit.7z.exe
 set arqgit=PortableGit-2.41.0.3-64-bit.7z.exe
 
-::set downpython=https://www.python.org/ftp/python/3.12.4/python-3.12.4-embed-amd64.zip
 set downpython=https://www.python.org/ftp/python/3.13.0/python-3.13.0-amd64.exe
 set arqpython=python-3.13.0-amd64.exe
 set nomepython=python
@@ -98,29 +78,18 @@ set downneo4j=https://neo4j.com/artifact.php?name=neo4j-community-5.17.0-windows
 set arqneo4j=neo4j-community-5.17.0-windows.zip
 set nomeneo4j=neo4j-community-5.17.0
 
-:: alterado para msi --> problema com dependencia de dll no windows
-:: ------->> observar o path para novas versões <<--------
-::set downmongodb=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-8.2.5.zip
 set downmongodb=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-8.2.5-signed.msi
-::set arqmongodb=mongodb-windows-x86_64-8.2.5.zip
 set arqmongodb=mongodb-windows-x86_64-8.2.5-signed.msi
-:: set nomemongodb=mongodb-win32-x86_64-windows-7.0.11
-::set nomemongodb=mongodb-win32-x86_64-windows-8.2.5
 
-:: set downmongosh=https://downloads.mongodb.com/compass/mongosh-2.5.1-win32-x64.zip
 set downmongosh=https://downloads.mongodb.com/compass/mongosh-2.6.0-win32-x64.zip
 set arqmongosh=mongosh-2.6.0-win32-x64.zip
 set nomemongosh=mongosh-2.6.0-win32-x64
 
 set downputty=https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe
 
-::set downpostgres=https://get.enterprisedb.com/postgresql/postgresql-16.3-2-windows-x64-binaries.zip
-::set arqpostgres=postgresql-16.3-2-windows-x64-binaries.zip
 set downpostgres=https://get.enterprisedb.com/postgresql/postgresql-15.7-2-windows-x64-binaries.zip
 set arqpostgres=postgresql-15.7-2-windows-x64-binaries.zip
 
-::set downnotepad=https://objects.githubusercontent.com/github-production-release-asset-2e65be/33014811/e44d9112-1b97-44d3-b414-9e877a0fda16?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20240909%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240909T101544Z&X-Amz-Expires=300&X-Amz-Signature=7a33466221bba714917708d253ea2d2d498965055b1582f267f075ba4fcf1c48&X-Amz-SignedHeaders=host&actor_id=28950782&key_id=0&repo_id=33014811&response-content-disposition=attachment%3B%20filename%3Dnpp.8.6.9.portable.x64.zip&response-content-type=application%2Foctet-stream
-::set downnotepad=https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.6.9/npp.8.6.9.portable.7z
 set downnotepad=http://download.notepad-plus-plus.org/repository/8.x/8.6.9/npp.8.6.9.portable.x64.zip
 set arqnotepad=npp.8.6.9.portable.x64.zip
 
@@ -136,38 +105,35 @@ set arqaspnetcore=aspnetcore-runtime-10.0.9-win-x64.zip
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: variaveis de ambiente para o windows
-:: configura o caminho para o sdk android
-:: para o jdk, node, vscode etc
-:: sempre execute os programas usando esse arquivo
-:: para ter sempre funcionando corretamente
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
-set DEVAPP_HOME=%~dp0%
-set ANDROID_STUDIO_HOME=%~dp0%android\android-studio
-set ANDROID_HOME=%~dp0%android\sdk
-set ANDROID_SDK_ROOT=%~dp0%android\sdk
-set FLUTTER_HOME=%~dp0%flutter
-set JAVA_HOME=%~dp0%jdk
-set MAVEN_HOME=%~dp0%maven
-set NODE_HOME=%~dp0%node
-set VSCODE_HOME=%~dp0%vscode
-set NETBEANS_HOME=%~dp0%netbeans
-set DBEAVER_HOME=%~dp0%dbeaver
-set MARIADB_HOME=%~dp0%mariadb
-set MYSQL_HOME=%~dp0%mysql
-set WGET_HOME=%~dp0%wget
-set SEVENZIP_HOME=%~dp0%sevenzip
-set NOTEPAD_HOME=%~dp0%notepad
-set GIT_HOME=%~dp0%git
-set PYTHON_HOME=%~dp0%python
-set NEO4J_HOME=%~dp0%neo4j
-set MONGODB_HOME=%~dp0%mongodb
-set MONGOSH_HOME=%~dp0%mongosh
-set PUTTY_HOME=%~dp0%putty
-set POSTGRES_HOME=%~dp0%pgsql
-set GRADLE_HOME=%~dp0%gradle
+:: [CORRIGIDO] removido o % extra no final de DEVAPP_HOME
+set DEVAPP_HOME=%~dp0
+set ANDROID_STUDIO_HOME=%~dp0android\android-studio
+set ANDROID_HOME=%~dp0android\sdk
+set ANDROID_SDK_ROOT=%~dp0android\sdk
+set FLUTTER_HOME=%~dp0flutter
+set JAVA_HOME=%~dp0jdk
+set MAVEN_HOME=%~dp0maven
+set NODE_HOME=%~dp0node
+set VSCODE_HOME=%~dp0vscode
+set NETBEANS_HOME=%~dp0netbeans
+set DBEAVER_HOME=%~dp0dbeaver
+set MARIADB_HOME=%~dp0mariadb
+set MYSQL_HOME=%~dp0mysql
+set WGET_HOME=%~dp0wget
+set SEVENZIP_HOME=%~dp0sevenzip
+set NOTEPAD_HOME=%~dp0notepad
+set GIT_HOME=%~dp0git
+set PYTHON_HOME=%~dp0python
+set NEO4J_HOME=%~dp0neo4j
+set MONGODB_HOME=%~dp0mongodb
+set MONGOSH_HOME=%~dp0mongosh
+set PUTTY_HOME=%~dp0putty
+set POSTGRES_HOME=%~dp0pgsql
+set GRADLE_HOME=%~dp0gradle
 
-set DOTNET_HOME=%~dp0%dotnet
-set DOTNET_ROOT=%~dp0%dotnet
+set DOTNET_HOME=%~dp0dotnet
+set DOTNET_ROOT=%~dp0dotnet
 
 SET PGDATA=%POSTGRES_HOME%\data
 SET PGDATABASE=postgres
@@ -175,12 +141,11 @@ SET PGUSER=postgres
 SET PGPORT=5439
 SET PGLOCALEDIR=%POSTGRES_HOME%\share\locale
 
-SET SCRIPTSDIR=%~dp0%scripts
+SET SCRIPTSDIR=%~dp0scripts
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
-:: altera o path do windows adicinoando os novos diretórios
-:: adiciona o path original no final
-:: set PathAUX=%JAVA_HOME%\bin;%NODE_HOME%;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\tools;%ANDROID_HOME%\emulator;%VSCODE_HOME%;%WGET_HOME%;%SEVENZIP_HOME%;%NOTEPAD_HOME%;%GIT_HOME%\bin
+:: altera o path do windows adicionando os novos diretórios
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
 set PathAUX=%DEVAPP_HOME%;%JAVA_HOME%\bin;%MAVEN_HOME%\bin;%NODE_HOME%;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\emulator;%ANDROID_HOME%\tools;%VSCODE_HOME%;%WGET_HOME%;%SEVENZIP_HOME%;%NOTEPAD_HOME%;%GIT_HOME%\bin;%PYTHON_HOME%;%PYTHON_HOME%\Scripts;%NEO4J_HOME%;%MONGODB_HOME%\MongoDB\Server\8.2\bin;%MONGODB_HOME%\System64;%MONGOSH_HOME%;%PUTTY_HOME%
 set PathAUX=%PathAUX%;%ANDROID_HOME%\cmdline-tools\latest\bin;%ANDROID_HOME%\platform-tools
 set PathAUX=%PathAUX%;%POSTGRES_HOME%\bin
@@ -188,7 +153,8 @@ set PathAUX=%PathAUX%;%FLUTTER_HOME%\bin
 set PathAUX=%PathAUX%;%GRADLE_HOME%\bin
 set PathAUX=%PathAUX%;%DOTNET_HOME%\;%DOTNET_ROOT%\
 set PathAUX=%PathAUX%;%SCRIPTSDIR%\
-set Path=%PathAUX%;%Path%;
+:: [CORRIGIDO] uso de aspas em set para evitar problemas com espaços
+set "Path=%PathAUX%;%Path%"
 ::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :TOP
@@ -197,13 +163,13 @@ color 1F
 ECHO -------------------------------------------------------
 ECHO     DEVAPP - Prof. Rômulo (rfdouro@gmail.com)
 ECHO.    Versão: %lastcommit%
-ECHO     Autor:  %author%        
+ECHO     Autor:  %author%
 ECHO.
-ECHO     %now% 
+ECHO     %now%
 ECHO -------------------------------------------------------
 ECHO.
 ECHO --^>  SEMPRE EXECUTE OS PROGRAMAS AQUI ("start.bat") ^<--
-ECHO. 
+ECHO.
 ECHO -------------------------------------------------------
 ECHO --- OPCOES --------------------------------------------
 ECHO ( 0 ) SAIR
@@ -212,7 +178,7 @@ ECHO ( 1 ) PROGRAMAÇÃO E BANCO DE DADOS
 ECHO ( 2 ) INSTALAÇÕES
 ECHO ( 3 ) AUXILIARES
 ECHO ::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-SET /P UserInput=Escolha uma opcao: 
+SET /P UserInput=Escolha uma opcao:
 ECHO.
 cls
 ECHO Opcao escolhida = %UserInput%
@@ -220,9 +186,9 @@ ECHO.
 SET /A Evaluated=UserInput
 if %Evaluated% EQU %UserInput% (
     IF %UserInput% EQU 0 ( GOTO :EOF )
-	IF %UserInput% EQU 1 ( GOTO :Executar )
-	IF %UserInput% EQU 2 ( GOTO :Instalar )
-	IF %UserInput% EQU 3 ( GOTO :Auxiliares )
+    IF %UserInput% EQU 1 ( GOTO :Executar )
+    IF %UserInput% EQU 2 ( GOTO :Instalar )
+    IF %UserInput% EQU 3 ( GOTO :Auxiliares )
 ) ELSE (
     ECHO Non-Integer
 )
@@ -248,7 +214,7 @@ ECHO (12 ) POSTMAN
 ECHO (13 ) PUTTY
 ECHO (14 ) VSCODE
 ECHO :::::::::::::::::::::::::::::::::::::::::::::::::::::
-SET /P UserInput=Escolha uma opcao: 
+SET /P UserInput=Escolha uma opcao:
 ECHO.
 cls
 ECHO Opcao escolhida = %UserInput%
@@ -256,20 +222,20 @@ ECHO.
 SET /A Evaluated=UserInput
 if %Evaluated% EQU %UserInput% (
     IF %UserInput% EQU 0 ( GOTO :TOP )
-	IF %UserInput% EQU 1 ( GOTO :ExecANDROIDSTUDIO )
-	IF %UserInput% EQU 2 ( GOTO :ExecDBEAVER )
-	IF %UserInput% EQU 3 ( GOTO :ExecINSOMNIA )
-	IF %UserInput% EQU 4 ( GOTO :ExecMARIADB )
-	IF %UserInput% EQU 5 ( GOTO :ExecMONGODB )
-	IF %UserInput% EQU 6 ( GOTO :ExecMONGOSH )
-	IF %UserInput% EQU 7 ( GOTO :ExecMYSQL )
-	IF %UserInput% EQU 8 ( GOTO :ExecNEO4J )
-	IF %UserInput% EQU 9 ( GOTO :ExecNETBEANS )
-	IF %UserInput% EQU 10 ( GOTO :ExecNOTEPAD )
-	IF %UserInput% EQU 11 ( GOTO :ExecPOSTGRES )
-	IF %UserInput% EQU 12 ( GOTO :ExecPOSTMAN )
-	IF %UserInput% EQU 13 ( GOTO :ExecPUTTY )
-	IF %UserInput% EQU 14 ( GOTO :ExecVSCODE )
+    IF %UserInput% EQU 1 ( GOTO :ExecANDROIDSTUDIO )
+    IF %UserInput% EQU 2 ( GOTO :ExecDBEAVER )
+    IF %UserInput% EQU 3 ( GOTO :ExecINSOMNIA )
+    IF %UserInput% EQU 4 ( GOTO :ExecMARIADB )
+    IF %UserInput% EQU 5 ( GOTO :ExecMONGODB )
+    IF %UserInput% EQU 6 ( GOTO :ExecMONGOSH )
+    IF %UserInput% EQU 7 ( GOTO :ExecMYSQL )
+    IF %UserInput% EQU 8 ( GOTO :ExecNEO4J )
+    IF %UserInput% EQU 9 ( GOTO :ExecNETBEANS )
+    IF %UserInput% EQU 10 ( GOTO :ExecNOTEPAD )
+    IF %UserInput% EQU 11 ( GOTO :ExecPOSTGRES )
+    IF %UserInput% EQU 12 ( GOTO :ExecPOSTMAN )
+    IF %UserInput% EQU 13 ( GOTO :ExecPUTTY )
+    IF %UserInput% EQU 14 ( GOTO :ExecVSCODE )
 ) ELSE (
     ECHO Non-Integer
 )
@@ -302,35 +268,35 @@ ECHO (19 ) SDK ANDROID CLI BÁSICO
 ECHO (20 ) VSCODE + CONFIGURAÇÕES
 ECHO (21 ) GERENCIAR EXTENSÕES VSCODE (por categorias)
 ECHO :::::::::::::::::::::::::::::::::::::::::::::::::::::
-SET /P UserInput=Escolha uma opcao: 
+SET /P UserInput=Escolha uma opcao:
 ECHO.
 cls
 ECHO Opcao escolhida = %UserInput%
 ECHO.
 SET /A Evaluated=UserInput
 if %Evaluated% EQU %UserInput% (
-	IF %UserInput% EQU 0 ( GOTO :TOP )
-	IF %UserInput% EQU 1 ( GOTO :BaixaANDROID )
-	IF %UserInput% EQU 2 ( GOTO :BaixaDBEAVER )
-	IF %UserInput% EQU 3 ( GOTO :BaixaFlutter )
-	IF %UserInput% EQU 4 ( GOTO :BaixaGIT )
-	IF %UserInput% EQU 5 ( GOTO :BaixaGradle )
-	IF %UserInput% EQU 6 ( GOTO :BaixaJDK )
-	IF %UserInput% EQU 7 ( GOTO :BaixaMARIADB )
-	IF %UserInput% EQU 8 ( GOTO :BaixaMongoDB )
-	IF %UserInput% EQU 9 ( GOTO :BaixaMongoSH )
-	IF %UserInput% EQU 10 ( GOTO :BaixaMYSQL )
-	IF %UserInput% EQU 11 ( GOTO :BaixaNEO4J )
-	IF %UserInput% EQU 12 ( GOTO :BaixaNETBEANS )
-	IF %UserInput% EQU 13 ( GOTO :BaixaNetCore )
-	IF %UserInput% EQU 14 ( GOTO :BaixaNode )
-	IF %UserInput% EQU 15 ( GOTO :BaixaNOTEPAD )
-	IF %UserInput% EQU 16 ( GOTO :BaixaPOSTGRES )
-	IF %UserInput% EQU 17 ( GOTO :BaixaPUTTY )
-	IF %UserInput% EQU 18 ( GOTO :BaixaPYTHON )
-	IF %UserInput% EQU 19 ( GOTO :BaixaSDKANDROID )
-	IF %UserInput% EQU 20 ( GOTO :BaixaVSCODE )
-	IF %UserInput% EQU 21 ( GOTO :GerenciarExtensoes )
+    IF %UserInput% EQU 0 ( GOTO :TOP )
+    IF %UserInput% EQU 1 ( GOTO :BaixaANDROID )
+    IF %UserInput% EQU 2 ( GOTO :BaixaDBEAVER )
+    IF %UserInput% EQU 3 ( GOTO :BaixaFlutter )
+    IF %UserInput% EQU 4 ( GOTO :BaixaGIT )
+    IF %UserInput% EQU 5 ( GOTO :BaixaGradle )
+    IF %UserInput% EQU 6 ( GOTO :BaixaJDK )
+    IF %UserInput% EQU 7 ( GOTO :BaixaMARIADB )
+    IF %UserInput% EQU 8 ( GOTO :BaixaMongoDB )
+    IF %UserInput% EQU 9 ( GOTO :BaixaMongoSH )
+    IF %UserInput% EQU 10 ( GOTO :BaixaMYSQL )
+    IF %UserInput% EQU 11 ( GOTO :BaixaNEO4J )
+    IF %UserInput% EQU 12 ( GOTO :BaixaNETBEANS )
+    IF %UserInput% EQU 13 ( GOTO :BaixaNetCore )
+    IF %UserInput% EQU 14 ( GOTO :BaixaNode )
+    IF %UserInput% EQU 15 ( GOTO :BaixaNOTEPAD )
+    IF %UserInput% EQU 16 ( GOTO :BaixaPOSTGRES )
+    IF %UserInput% EQU 17 ( GOTO :BaixaPUTTY )
+    IF %UserInput% EQU 18 ( GOTO :BaixaPYTHON )
+    IF %UserInput% EQU 19 ( GOTO :BaixaSDKANDROID )
+    IF %UserInput% EQU 20 ( GOTO :BaixaVSCODE )
+    IF %UserInput% EQU 21 ( GOTO :GerenciarExtensoes )
 ) ELSE (
     ECHO Non-Integer
 )
@@ -351,34 +317,30 @@ ECHO ( 7 ) SMART DRAW
 ECHO ( 8 ) VISUAL PARADIGM ONLINE
 ECHO ( 9 ) YED ONLINE
 ECHO :::::::::::::::::::::::::::::::::::::::::::::::::::::
-SET /P UserInput=Escolha uma opcao: 
+SET /P UserInput=Escolha uma opcao:
 ECHO.
 cls
 ECHO Opcao escolhida = %UserInput%
 ECHO.
 SET /A Evaluated=UserInput
 if %Evaluated% EQU %UserInput% (
-	IF %UserInput% EQU 0 ( GOTO :TOP )
-	IF %UserInput% EQU 1 ( GOTO :AbreCMD )
-	IF %UserInput% EQU 2 ( GOTO :AbreCreately )
-	IF %UserInput% EQU 3 ( GOTO :AbreDBDiagram )
-	IF %UserInput% EQU 4 ( GOTO :AbreDrawIO )
-	IF %UserInput% EQU 5 ( GOTO :AbreExcalidraw )
-	IF %UserInput% EQU 6 ( GOTO :AbreMermaid )
-	IF %UserInput% EQU 7 ( GOTO :AbreSmartDraw )
-	IF %UserInput% EQU 8 ( GOTO :AbreVisualParadigm )
-	IF %UserInput% EQU 9 ( GOTO :AbreYed )
+    IF %UserInput% EQU 0 ( GOTO :TOP )
+    IF %UserInput% EQU 1 ( GOTO :AbreCMD )
+    IF %UserInput% EQU 2 ( GOTO :AbreCreately )
+    IF %UserInput% EQU 3 ( GOTO :AbreDBDiagram )
+    IF %UserInput% EQU 4 ( GOTO :AbreDrawIO )
+    IF %UserInput% EQU 5 ( GOTO :AbreExcalidraw )
+    IF %UserInput% EQU 6 ( GOTO :AbreMermaid )
+    IF %UserInput% EQU 7 ( GOTO :AbreSmartDraw )
+    IF %UserInput% EQU 8 ( GOTO :AbreVisualParadigm )
+    IF %UserInput% EQU 9 ( GOTO :AbreYed )
 ) ELSE (
     ECHO Non-Integer
 )
 GOTO :TOP
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::
-:: 
 :: seção de execuções
-::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :AbreCMD
@@ -419,242 +381,192 @@ GOTO :TOP
 
 :ExecANDROIDSTUDIO
 IF EXIST "%ANDROID_STUDIO_HOME%\bin\studio64.exe" (
-	start "" "%ANDROID_STUDIO_HOME%\bin\studio64.exe"
+    start "" "%ANDROID_STUDIO_HOME%\bin\studio64.exe"
 ) ELSE (
-	color 4F
-	ECHO ANDROID STUDIO NAO INSTALADO - USE A OPCAO DE INSTALACAO
-	ECHO ......................................
-	PAUSE
+    color 4F
+    ECHO ANDROID STUDIO NAO INSTALADO - USE A OPCAO DE INSTALACAO
+    ECHO ......................................
+    PAUSE
 )
 GOTO :TOP
 
 :ExecDBEAVER
 IF EXIST "%DBEAVER_HOME%\dbeaver.exe" (
-	start "" "%DBEAVER_HOME%\dbeaver.exe"
+    start "" "%DBEAVER_HOME%\dbeaver.exe"
 ) ELSE (
-	color 4F
-	ECHO DBEAVER NAO INSTALADO - USE A OPCAO DE INSTALACAO
-	ECHO ......................................
-	PAUSE
+    color 4F
+    ECHO DBEAVER NAO INSTALADO - USE A OPCAO DE INSTALACAO
+    ECHO ......................................
+    PAUSE
 )
 GOTO :TOP
 
 :ExecINSOMNIA
-IF EXIST "%DEVAPP_HOME%%arqinsomnia%" (
-	start "" "%DEVAPP_HOME%%arqinsomnia%"
+IF EXIST "%DEVAPP_HOME%insomnia.exe" (
+    start "" "%DEVAPP_HOME%insomnia.exe"
 ) ELSE (
-	color 4F
-	ECHO INSOMNIA NAO INSTALADO.
-	ECHO CLIQUE PARA PROSSEGUIR COM A INSTALACAO
-	ECHO ......................................
-	PAUSE
-	GOTO :BaixaINSOMNIA
+    color 4F
+    ECHO INSOMNIA NAO INSTALADO.
+    ECHO CLIQUE PARA PROSSEGUIR COM A INSTALACAO
+    ECHO ......................................
+    PAUSE
+    GOTO :BaixaINSOMNIA
 )
+GOTO :TOP
 
 :ExecMARIADB
 IF EXIST "%MARIADB_HOME%\bin\mysql_install_db.exe" (
-	start "Mariadb" cmd /c "ECHO ATENCAO & ECHO --------------------------------------- & ECHO Nao feche essa janela enquanto estiver usando o MariaDB & ECHO O MariaDB estara rodando na porta 3360 e a senha e SECRET & ECHO --------------------------------------- & pause & "%MARIADB_HOME%"\bin\mysql_install_db --password=SECRET & "%MARIADB_HOME%"\bin\mysqld --port=3360 --console"
+    start "Mariadb" cmd /c "ECHO ATENCAO & ECHO --------------------------------------- & ECHO Nao feche essa janela enquanto estiver usando o MariaDB & ECHO O MariaDB estara rodando na porta 3360 e a senha e SECRET & ECHO --------------------------------------- & pause & "%MARIADB_HOME%"\bin\mysql_install_db --password=SECRET & "%MARIADB_HOME%"\bin\mysqld --port=3360 --console"
 ) ELSE (
-	color 4F
-	ECHO MARIADB NAO INSTALADO - USE A OPCAO DE INSTALACAO
-	ECHO ......................................
-	PAUSE
+    color 4F
+    ECHO MARIADB NAO INSTALADO - USE A OPCAO DE INSTALACAO
+    ECHO ......................................
+    PAUSE
 )
 GOTO :TOP
 
 :ExecMONGODB
 IF EXIST "%MONGODB_HOME%\MongoDB\Server\8.2\bin\mongod.exe" (
-	cmd /c start "MongoDB" "%MONGODB_HOME%\MongoDB\Server\8.2\bin\mongod.exe" --dbpath "%MONGODB_HOME%\data"
+    cmd /c start "MongoDB" "%MONGODB_HOME%\MongoDB\Server\8.2\bin\mongod.exe" --dbpath "%MONGODB_HOME%\data"
 ) ELSE (
-	color 4F
-	ECHO MONGODB NAO INSTALADO - USE A OPCAO DE INSTALACAO
-	ECHO ......................................
-	PAUSE
+    color 4F
+    ECHO MONGODB NAO INSTALADO - USE A OPCAO DE INSTALACAO
+    ECHO ......................................
+    PAUSE
 )
 GOTO :TOP
 
 :ExecMONGOSH
 IF EXIST "%MONGOSH_HOME%\bin\mongosh.exe" (
-	cmd /c start "MongoSH" "%MONGOSH_HOME%\bin\mongosh.exe"
+    cmd /c start "MongoSH" "%MONGOSH_HOME%\bin\mongosh.exe"
 ) ELSE (
-	color 4F
-	ECHO MONGOSH NAO INSTALADO - USE A OPCAO DE INSTALACAO
-	ECHO ......................................
-	PAUSE
+    color 4F
+    ECHO MONGOSH NAO INSTALADO - USE A OPCAO DE INSTALACAO
+    ECHO ......................................
+    PAUSE
 )
 GOTO :TOP
 
 :ExecMYSQL
 IF EXIST "%MYSQL_HOME%\bin\mysqld.exe" (
-	start "MYSQL" cmd /c "ECHO ATENCAO & ECHO --------------------------------------- & ECHO Nao feche essa janela enquanto estiver usando o MySQL & ECHO O MySQL estara rodando na porta 3360 com usuario root sem senha & ECHO --------------------------------------- & pause & "%MYSQL_HOME%\bin\mysqld" --initialize-insecure & "%MYSQL_HOME%\bin\mysqld" --standalone --console --datadir="%MYSQL_HOME%\data" --port=3360"
+    start "MYSQL" cmd /c "ECHO ATENCAO & ECHO --------------------------------------- & ECHO Nao feche essa janela enquanto estiver usando o MySQL & ECHO O MySQL estara rodando na porta 3360 com usuario root sem senha & ECHO --------------------------------------- & pause & "%MYSQL_HOME%\bin\mysqld" --initialize-insecure & "%MYSQL_HOME%\bin\mysqld" --standalone --console --datadir="%MYSQL_HOME%\data" --port=3360"
 ) ELSE (
-	color 4F
-	ECHO MYSQL NAO INSTALADO - USE A OPCAO DE INSTALACAO
-	ECHO ......................................
-	PAUSE
+    color 4F
+    ECHO MYSQL NAO INSTALADO - USE A OPCAO DE INSTALACAO
+    ECHO ......................................
+    PAUSE
 )
 GOTO :TOP
 
 :ExecNEO4J
 IF EXIST "%NEO4J_HOME%\bin\neo4j.bat" (
-	start "NEO4J" "%NEO4J_HOME%\bin\neo4j.bat" console
+    start "NEO4J" "%NEO4J_HOME%\bin\neo4j.bat" console
 ) ELSE (
-	color 4F
-	ECHO NEO4J NAO INSTALADO - USE A OPCAO DE INSTALACAO
-	ECHO ......................................
-	PAUSE
+    color 4F
+    ECHO NEO4J NAO INSTALADO - USE A OPCAO DE INSTALACAO
+    ECHO ......................................
+    PAUSE
 )
 GOTO :TOP
 
 :ExecNETBEANS
 IF EXIST "%NETBEANS_HOME%\bin\netbeans64.exe" (
-	cmd /c start "" "%NETBEANS_HOME%\bin\netbeans64.exe" --jdkhome "%JAVA_HOME%"
+    cmd /c start "" "%NETBEANS_HOME%\bin\netbeans64.exe" --jdkhome "%JAVA_HOME%"
 ) ELSE (
-	color 4F
-	ECHO NETBEANS NAO INSTALADO - USE A OPCAO DE INSTALACAO
-	ECHO ......................................
-	PAUSE
+    color 4F
+    ECHO NETBEANS NAO INSTALADO - USE A OPCAO DE INSTALACAO
+    ECHO ......................................
+    PAUSE
 )
 GOTO :TOP
 
+:: [CORRIGIDO] usar caminho completo do notepad++
 :ExecNOTEPAD
-start notepad++
+IF EXIST "%NOTEPAD_HOME%\notepad++.exe" (
+    start "" "%NOTEPAD_HOME%\notepad++.exe"
+) ELSE (
+    color 4F
+    ECHO NOTEPAD++ NAO INSTALADO - USE A OPCAO DE INSTALACAO
+    ECHO ......................................
+    PAUSE
+)
 GOTO :TOP
 
 :ExecPOSTGRES
 IF EXIST "%POSTGRES_HOME%\bin\initdb.exe" (
-	ECHO Postgres existe
+    ECHO Postgres existe
 ) ELSE (
-	color 4F
-	ECHO POSTGRES NAO INSTALADO - USE A OPCAO DE INSTALACAO
-	ECHO ......................................
-	PAUSE
-	GOTO :TOP
+    color 4F
+    ECHO POSTGRES NAO INSTALADO - USE A OPCAO DE INSTALACAO
+    ECHO ......................................
+    PAUSE
+    GOTO :TOP
 )
 
 IF EXIST "%POSTGRES_HOME%\data" (
-	ECHO Postgres tem instancia.	
+    ECHO Postgres tem instancia.
 ) ELSE (
-	ECHO Primeira execucao do postgres.
-	"%POSTGRES_HOME%\bin\initdb" -U postgres -A trust
+    ECHO Primeira execucao do postgres.
+    "%POSTGRES_HOME%\bin\initdb" -U postgres -A trust
 )
 taskkill /F /IM "postgres.exe" >nul 2>&1
 start "postgres" cmd /c "ECHO ATENCAO & ECHO --------------------------------------- & ECHO Nao feche essa janela enquanto estiver usando o postgres & ECHO O postgres estara rodando na porta %PGPORT% & ECHO --------------------------------------- & pause & "%POSTGRES_HOME%"\bin\pg_ctl -D "%POSTGRES_HOME%"\data -l "%POSTGRES_HOME%"\logfile start && ECHO para fechar o banco continue abaixo... && PAUSE && "%POSTGRES_HOME%"\bin\pg_ctl -D "%POSTGRES_HOME%"\data stop"
 GOTO :TOP
 
 :ExecPOSTMAN
-IF EXIST "%DEVAPP_HOME%%arqpostman%" (
-	start "" "%DEVAPP_HOME%%arqpostman%"
+IF EXIST "%DEVAPP_HOME%postman.exe" (
+    start "" "%DEVAPP_HOME%postman.exe"
 ) ELSE (
-	color 4F
-	ECHO POSTMAN NAO INSTALADO.
-	ECHO CLIQUE PARA PROSSEGUIR COM A INSTALACAO
-	ECHO ......................................
-	PAUSE
-	GOTO :BaixaPOSTMAN
+    color 4F
+    ECHO POSTMAN NAO INSTALADO.
+    ECHO CLIQUE PARA PROSSEGUIR COM A INSTALACAO
+    ECHO ......................................
+    PAUSE
+    GOTO :BaixaPOSTMAN
 )
 GOTO :TOP
 
 :ExecPUTTY
 IF EXIST "%PUTTY_HOME%\putty.exe" (
-	cmd /c start "Putty" "%PUTTY_HOME%\putty.exe"
+    cmd /c start "Putty" "%PUTTY_HOME%\putty.exe"
 ) ELSE (
-	color 4F
-	ECHO PUTTY NAO INSTALADO - USE A OPCAO DE INSTALACAO
-	ECHO ......................................
-	PAUSE
+    color 4F
+    ECHO PUTTY NAO INSTALADO - USE A OPCAO DE INSTALACAO
+    ECHO ......................................
+    PAUSE
 )
 GOTO :TOP
 
+:: [CORRIGIDO] limpeza do cache jdt_ws antes de abrir o VS Code
 :ExecVSCODE
 IF EXIST "%VSCODE_HOME%\code.exe" (
-	cmd /c start "" "%VSCODE_HOME%\code.exe" --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir"
+    if exist "%VSCODE_HOME%\userdir\workspaceStorage" (
+        for /d %%D in ("%VSCODE_HOME%\userdir\workspaceStorage\*") do (
+            if exist "%%D\redhat.java\jdt_ws" (
+                echo Limpando cache Java LS: %%D\redhat.java\jdt_ws
+                rmdir /s /q "%%D\redhat.java\jdt_ws" 2>nul
+            )
+        )
+    )
+    cmd /c start "" "%VSCODE_HOME%\code.exe" --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir"
 ) ELSE (
-	color 4F
-	ECHO VSCODE NAO INSTALADO - USE A OPCAO DE INSTALACAO
-	ECHO ......................................
-	PAUSE
+    color 4F
+    ECHO VSCODE NAO INSTALADO - USE A OPCAO DE INSTALACAO
+    ECHO ......................................
+    PAUSE
 )
 GOTO :TOP
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: seção de instalações
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
-:: 
-:: seção de instalações 
-::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-@REM :ExecINSTEXTVSCODE
-@REM ECHO ---------------------------------------
-@REM @ECHO Instalacao de extensoes do VSCODE
-@REM @ECHO OFF
-@REM ECHO Em %VSCODE_HOME%
-@REM ECHO ---------------------------------------
-@REM cd "%VSCODE_HOME%\bin\"
-@REM call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension christian-kohler.npm-intellisense ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension christian-kohler.path-intellisense ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dbaeumer.vscode-eslint ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension editorconfig.editorconfig ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension esbenp.prettier-vscode ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.auto-close-tag ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.auto-rename-tag ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.code-runner ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.dotnet ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension grogdunn.netbeans-keybindings ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension hollowtree.vue-snippets ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension jakewilson.vscode-cdnjs ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension jmrog.vscode-nuget-package-manager ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension juhahinkula.thymeleaf ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension mrmlnc.vscode-scss ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-dotnettools.csharp ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-dotnettools.vscode-dotnet-runtime ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension obrejla.netbeans-light-theme ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension pkief.material-icon-theme ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.java ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-community-server-connector ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-rsp-ui ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-server-connector ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-xml ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ritwickdey.liveserver ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-debug ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-dependency ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-pack ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-test ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-maven ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-spring-boot-dashboard ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-spring-initializr ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscode-icons-team.vscode-icons ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vue.volar ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension yzhang.markdown-all-in-one ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension zignd.html-css-class-completion ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension wscats.vue ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension mechatroner.rainbow-csv ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension samuel-weinhardt.vscode-jsp-lang ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension alexisvt.flutter-snippets ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dart-code.dart-code ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dart-code.flutter ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension eamodio.gitlens ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension streetsidesoftware.code-spell-checker ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension aaron-bond.better-comments ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dsznajder.es7-react-js-snippets ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-python.python ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-python.vscode-pylance ^
-@REM && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-gradle
-
-@REM pause
-@REM GOTO :TOP
 
 :ExecINSTVUE
 start "Instala vue" cmd /c "npm i -g @vue/cli"
 GOTO :TOP
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::
-:: 
 :: seção de downloads propriamente ditos
-::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :BaixaANDROID
@@ -678,9 +590,9 @@ GOTO :TOP
 cd %~dp0
 wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downflutter%
 if exist flutter (
-	rmdir /S /Q flutter
+    rmdir /S /Q flutter
 )
-7za x %arqflutter% 
+7za x %arqflutter%
 del /F %arqflutter%
 pause
 GOTO :TOP
@@ -688,7 +600,7 @@ GOTO :TOP
 :BaixaGIT
 cd %~dp0
 if exist git (
-	rmdir /S /Q git
+    rmdir /S /Q git
 )
 mkdir git
 cd "%GIT_HOME%"
@@ -703,9 +615,9 @@ GOTO :TOP
 cd %~dp0
 wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downgradle%
 if exist gradle (
-	rmdir /S /Q gradle
+    rmdir /S /Q gradle
 )
-7za x %arqgradle% 
+7za x %arqgradle%
 del /F %arqgradle%
 ren %nomegradle% gradle
 cd %~dp0
@@ -715,11 +627,11 @@ GOTO :TOP
 :BaixaJDK
 cd %~dp0
 if exist jdk (
-	rmdir /S /Q jdk
+    rmdir /S /Q jdk
 )
 wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downjdk%
 7za x %arqjdk%
-del /F %arqjdk% 
+del /F %arqjdk%
 ren %nomejdk% jdk
 cd %~dp0
 GOTO :BaixaMaven
@@ -728,9 +640,9 @@ GOTO :BaixaMaven
 cd %~dp0
 wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downmaven%
 if exist maven (
-	rmdir /S /Q maven
+    rmdir /S /Q maven
 )
-7za x %arqmaven% 
+7za x %arqmaven%
 del /F %arqmaven%
 ren %nomemaven% maven
 cd %~dp0
@@ -740,9 +652,9 @@ GOTO :TOP
 cd %~dp0
 wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downmariadb%
 if exist mariadb (
-	rmdir /S /Q mariadb
+    rmdir /S /Q mariadb
 )
-7za x %arqmariadb% 
+7za x %arqmariadb%
 del /F %arqmariadb%
 ren %nomemariadb% mariadb
 GOTO :TOP
@@ -751,7 +663,7 @@ GOTO :TOP
 cd %~dp0
 wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downmongodb% -O %arqmongodb%
 if exist "%MONGODB_HOME%" (
-	rmdir /S /Q "%MONGODB_HOME%"
+    rmdir /S /Q "%MONGODB_HOME%"
 )
 mkdir "%MONGODB_HOME%" && mkdir "%MONGODB_HOME%\data"
 msiexec /a "%arqmongodb%" /qb TARGETDIR="%MONGODB_HOME%" && del /F %arqmongodb%
@@ -762,7 +674,7 @@ GOTO :TOP
 cd %~dp0
 wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downmongosh% -O %arqmongosh%
 if exist "%MONGOSH_HOME%" (
-	rmdir /S /Q "%MONGOSH_HOME%"
+    rmdir /S /Q "%MONGOSH_HOME%"
 )
 7za x %arqmongosh% && del /F %arqmongosh%
 ren %nomemongosh% mongosh
@@ -773,9 +685,9 @@ GOTO :TOP
 cd %~dp0
 wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downmysql%
 if exist mysql (
-	rmdir /S /Q mysql
+    rmdir /S /Q mysql
 )
-7za x %arqmysql% 
+7za x %arqmysql%
 del /F %arqmysql%
 ren %nomemysql% mysql
 GOTO :TOP
@@ -784,7 +696,7 @@ GOTO :TOP
 cd %~dp0
 wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downneo4j% -O %arqneo4j%
 if exist "%NEO4J_HOME%" (
-	rmdir /S /Q "%NEO4J_HOME%"
+    rmdir /S /Q "%NEO4J_HOME%"
 )
 7za x %arqneo4j%
 del /F %arqneo4j%
@@ -795,7 +707,7 @@ GOTO :TOP
 :BaixaNETBEANS
 cd %~dp0
 if exist "%NETBEANS_HOME%" (
-	rmdir /q /s "%NETBEANS_HOME%"
+    rmdir /q /s "%NETBEANS_HOME%"
 )
 wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downnetbeans%
 7za x %arqnetbeans%
@@ -806,7 +718,7 @@ GOTO :TOP
 :BaixaNetCore
 cd %~dp0
 if exist "%DOTNET_HOME%" (
-	rmdir /S /Q "%DOTNET_HOME%"
+    rmdir /S /Q "%DOTNET_HOME%"
 )
 mkdir "%DOTNET_HOME%"
 cd "%DOTNET_HOME%"
@@ -821,9 +733,9 @@ GOTO :TOP
 cd %~dp0
 wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downnode%
 if exist node (
-	rmdir /S /Q node
+    rmdir /S /Q node
 )
-7za x %arqnode% 
+7za x %arqnode%
 del /F %arqnode%
 ren %nomenode% node
 cd %~dp0
@@ -832,9 +744,9 @@ GOTO :BaixaGIT
 :BaixaNOTEPAD
 cd %~dp0
 if exist "%NOTEPAD_HOME%" (
-	rmdir /q /s "%NOTEPAD_HOME%"
+    rmdir /q /s "%NOTEPAD_HOME%"
 )
-wget --dns-servers=8.8.8.8,1.1.1.1 --auth-no-challenge %downnotepad% 
+wget --dns-servers=8.8.8.8,1.1.1.1 --auth-no-challenge %downnotepad%
 7za x %arqnotepad% -onotepad
 del /F %arqnotepad%
 pause
@@ -844,9 +756,9 @@ GOTO :TOP
 cd %~dp0
 wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downpostgres%
 if exist pgsql (
-	rmdir /S /Q pgsql
+    rmdir /S /Q pgsql
 )
-7za x %arqpostgres% 
+7za x %arqpostgres%
 del /F %arqpostgres%
 GOTO :TOP
 
@@ -865,7 +777,7 @@ GOTO :TOP
 :BaixaPUTTY
 cd %~dp0
 if exist "%PUTTY_HOME%" (
-	rmdir /S /Q "%PUTTY_HOME%"	
+    rmdir /S /Q "%PUTTY_HOME%"
 )
 mkdir "%PUTTY_HOME%"
 cd "%PUTTY_HOME%"
@@ -876,7 +788,7 @@ GOTO :TOP
 :BaixaPYTHON
 cd %~dp0
 if exist "%PYTHON_HOME%" (
-	rmdir /S /Q "%PYTHON_HOME%"
+    rmdir /S /Q "%PYTHON_HOME%"
 )
 mkdir "%PYTHON_HOME%"
 wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downpython%
@@ -888,7 +800,7 @@ GOTO :TOP
 :BaixaSDKANDROID
 cd %~dp0
 if not exist "%ANDROID_HOME%" (
-	mkdir "%ANDROID_HOME%"
+    mkdir "%ANDROID_HOME%"
 )
 cd "%ANDROID_HOME%"
 wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downcommandlinetools%
@@ -906,18 +818,22 @@ GOTO :TOP
 :BaixaVSCODE
 cd %~dp0
 if not exist "%VSCODE_HOME%" (
-	mkdir "%VSCODE_HOME%"
+    mkdir "%VSCODE_HOME%"
 )
 cd "%VSCODE_HOME%"
 wget --dns-servers=8.8.8.8,1.1.1.1 --no-check-certificate %downvscode%
 7za x %arqvscode%
 del /F %arqvscode%
 mkdir userdir
-cd userdir 
+cd userdir
 mkdir User
 cd %~dp0
-copy settings.json "%VSCODE_HOME%\userdir\User"
-::GOTO :ExecINSTEXTVSCODE
+:: [CORRIGIDO] verifica se settings.json existe antes de copiar
+if exist "%~dp0settings.json" (
+    copy "%~dp0settings.json" "%VSCODE_HOME%\userdir\User\settings.json" >nul
+) ELSE (
+    ECHO AVISO: settings.json nao encontrado em %~dp0
+)
 GOTO :TOP
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -938,44 +854,34 @@ ECHO ( 5 ) FLUTTER / DART
 ECHO ( 6 ) UTILITÁRIOS (Git, Markdown, etc.)
 ECHO ( 7 ) TODAS AS EXTENSÕES (instalação completa)
 ECHO :::::::::::::::::::::::::::::::::::::::::::::::::::::
-SET /P UserInput=Escolha uma opcao: 
+SET /P UserInput=Escolha uma opcao:
 ECHO.
 cls
 ECHO Opcao escolhida = %UserInput%
 ECHO.
 SET /A Evaluated=UserInput
 if %Evaluated% EQU %UserInput% (
-	IF %UserInput% EQU 0 ( GOTO :Instalar )
-	IF %UserInput% EQU 1 ( GOTO :InstalarExtJava )
-	IF %UserInput% EQU 2 ( GOTO :InstalarExtFront )
-	IF %UserInput% EQU 3 ( GOTO :InstalarExtPython )
-	IF %UserInput% EQU 4 ( GOTO :InstalarExtDotnet )
-	IF %UserInput% EQU 5 ( GOTO :InstalarExtFlutter )
-	IF %UserInput% EQU 6 ( GOTO :InstalarExtUtils )
-	IF %UserInput% EQU 7 ( GOTO :InstalarExtTodas )
+    IF %UserInput% EQU 0 ( GOTO :Instalar )
+    IF %UserInput% EQU 1 ( GOTO :InstalarExtJava )
+    IF %UserInput% EQU 2 ( GOTO :InstalarExtFront )
+    IF %UserInput% EQU 3 ( GOTO :InstalarExtPython )
+    IF %UserInput% EQU 4 ( GOTO :InstalarExtDotnet )
+    IF %UserInput% EQU 5 ( GOTO :InstalarExtFlutter )
+    IF %UserInput% EQU 6 ( GOTO :InstalarExtUtils )
+    IF %UserInput% EQU 7 ( GOTO :InstalarExtTodas )
 ) ELSE (
     ECHO Non-Integer
 )
 GOTO :GerenciarExtensoes
 
+:: [CORRIGIDO] Java/Spring: apenas os 2 packs + extras, sem duplicatas
 :InstalarExtJava
 ECHO Instalando extensões para Java/Spring...
 cd "%VSCODE_HOME%\bin\"
-call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.java ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-debug ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-dependency ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-pack ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-test ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-maven ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-spring-initializr ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-spring-boot-dashboard ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-gradle ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vmware.vscode-spring-boot ^
+call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-pack ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vmware.vscode-boot-dev-pack ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-community-server-connector ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-rsp-ui ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-server-connector ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-xml ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-gradle ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension gabrielbb.vscode-lombok ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension juhahinkula.thymeleaf ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension samuel-weinhardt.vscode-jsp-lang
 pause
@@ -984,6 +890,7 @@ GOTO :GerenciarExtensoes
 :InstalarExtFront
 ECHO Instalando extensões para Frontend (HTML/CSS/JS/Vue/React)...
 cd "%VSCODE_HOME%\bin\"
+:: [CORRIGIDO] removido wscats.vue (redundante com Volar)
 call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension esbenp.prettier-vscode ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dbaeumer.vscode-eslint ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.auto-close-tag ^
@@ -993,7 +900,6 @@ call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_H
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension zignd.html-css-class-completion ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension mrmlnc.vscode-scss ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vue.volar ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension wscats.vue ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension hollowtree.vue-snippets ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dsznajder.es7-react-js-snippets ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension jakewilson.vscode-cdnjs
@@ -1013,7 +919,6 @@ ECHO Instalando extensões para .NET/C#...
 cd "%VSCODE_HOME%\bin\"
 call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-dotnettools.csharp ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-dotnettools.vscode-dotnet-runtime ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.dotnet ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension jmrog.vscode-nuget-package-manager
 pause
 GOTO :GerenciarExtensoes
@@ -1044,25 +949,21 @@ call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_H
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension grogdunn.netbeans-keybindings ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension obrejla.netbeans-light-theme ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension marp-team.marp-vscode ^
-:: && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension yzane.markdown-pdf ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension kino6.markdown-studio-local ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension katsuyuzu.marp-to-editable-pptx
 pause
 GOTO :GerenciarExtensoes
 
+:: [CORRIGIDO] "Todas" agora com Java/Spring sem duplicatas
 :InstalarExtTodas
 ECHO Instalando TODAS as extensões (pode demorar)...
 cd "%VSCODE_HOME%\bin\"
-call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.java ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-debug ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-dependency ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-pack ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-test ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-maven ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-spring-initializr ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-spring-boot-dashboard ^
+call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-java-pack ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vmware.vscode-boot-dev-pack ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vscjava.vscode-gradle ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vmware.vscode-spring-boot ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension gabrielbb.vscode-lombok ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension juhahinkula.thymeleaf ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension samuel-weinhardt.vscode-jsp-lang ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension esbenp.prettier-vscode ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dbaeumer.vscode-eslint ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.auto-close-tag ^
@@ -1072,18 +973,17 @@ call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_H
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension zignd.html-css-class-completion ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension mrmlnc.vscode-scss ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vue.volar ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension wscats.vue ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension hollowtree.vue-snippets ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dsznajder.es7-react-js-snippets ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-python.python ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-python.vscode-pylance ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-dotnettools.csharp ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension ms-dotnettools.vscode-dotnet-runtime ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension formulahendry.dotnet ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension jmrog.vscode-nuget-package-manager ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dart-code.dart-code ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension dart-code.flutter ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension alexisvt.flutter-snippets ^
+&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension rexthedev.flutter-preview ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension eamodio.gitlens ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension streetsidesoftware.code-spell-checker ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension aaron-bond.better-comments ^
@@ -1096,17 +996,8 @@ call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_H
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension mechatroner.rainbow-csv ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension grogdunn.netbeans-keybindings ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension obrejla.netbeans-light-theme ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension vmware.vscode-boot-dev-pack ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-community-server-connector ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-rsp-ui ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-server-connector ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension redhat.vscode-xml ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension juhahinkula.thymeleaf ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension samuel-weinhardt.vscode-jsp-lang ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension jakewilson.vscode-cdnjs ^
-&& call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension rexthedev.flutter-preview ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension marp-team.marp-vscode ^
-:: && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension yzane.markdown-pdf ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension kino6.markdown-studio-local ^
 && call code --extensions-dir "%VSCODE_HOME%\extensions" --user-data-dir "%VSCODE_HOME%\userdir" --install-extension katsuyuzu.marp-to-editable-pptx
 pause
