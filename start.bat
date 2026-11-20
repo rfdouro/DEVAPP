@@ -38,9 +38,14 @@ set arqnode=node-v24.18.0-win-x64.zip
 set nomenode=node-v24.18.0-win-x64
 
 :: visite https://jdk.java.net/archive/ para mais versões
-set downjdk=https://download.java.net/java/GA/jdk21.0.2/f2283984656d49d69e91c558476027ac/13/GPL/openjdk-21.0.2_windows-x64_bin.zip
-set arqjdk=openjdk-21.0.2_windows-x64_bin.zip
-set nomejdk=jdk-21.0.2
+:: set downjdk=https://download.java.net/java/GA/jdk21.0.2/f2283984656d49d69e91c558476027ac/13/GPL/openjdk-21.0.2_windows-x64_bin.zip
+:: set arqjdk=openjdk-21.0.2_windows-x64_bin.zip
+:: set nomejdk=jdk-21.0.2
+:: agora usando M$ 
+:: https://learn.microsoft.com/pt-br/java/openjdk/download
+set downjdk=https://aka.ms/download-jdk/microsoft-jdk-21.0.13.1-windows-x64.zip
+set arqjdk=microsoft-jdk-21.0.13.1-windows-x64.zip
+set nomejdk=jdk-21.0.13.1+2
 
 set downgradle=https://services.gradle.org/distributions/gradle-8.12-bin.zip
 set arqgradle=gradle-8.12-bin.zip
